@@ -13,8 +13,22 @@ pub struct Cube {
 impl Cube {
     pub fn new() -> Self {
         Self {
-            edges: ,
-            corners: (),
+            edges: 0xBA98_7654_3210,
+            corners: 0x0706_0504_0302_0100,
         }
     }
+
+    /// Eeach possible move (clockwise or anticlockwise)
+    fn up<const CW: bool>(&mut self) {
+        let tmp_11_pack = self.edges & 0x1000_0000_0000;
+        let tmp_3_pack = self.edges & 0x100;
+        self.edges = self.edges.rotate_left(4);
+        self.edges &= 0x1111_0111_1111_1111;
+        self.edges &= 0x1111_1111_1111_1011;
+    }
+    fn down<const CW: bool>(&mut self) {}
+    fn right<const CW: bool>(&mut self) {}
+    fn left<const CW: bool>(&mut self) {}
+    fn top<const CW: bool>(&mut self) {}
+    fn bottom<const CW: bool>(&mut self) {}
 }
