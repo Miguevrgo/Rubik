@@ -114,7 +114,7 @@ impl Cube {
             (c2, c6, c7, c3)
         };
 
-        self.corners = (self.corners & !0x0000_00FF_FF00_FFFF)
+        self.corners = (self.corners & !0xFFFF_0000_FFFF_0000)
             | (nc2 << 16)
             | (nc3 << 24)
             | (nc6 << 48)
@@ -188,5 +188,9 @@ impl Cube {
             | (nc2 << 16)
             | (nc5 << 40)
             | (nc6 << 48);
+    }
+
+    fn is_solved(&self) -> bool {
+        self.edges == 0xBA98_7654_3210 && self.corners == 0x0706_0504_0302_0100
     }
 }
