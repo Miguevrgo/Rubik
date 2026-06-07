@@ -1,0 +1,9 @@
+{
+  "accuracy_within_1_step_pct": 36.89999771118164,
+  "accuracy_within_2_steps_pct": 61.099998474121094,
+  "mae": 1.9303569793701172,
+  "max_absolute_error": 9.64998722076416,
+  "mse": 6.398379802703857,
+  "network_architecture": "Linear(480 -> 256) -> ReLU -> Linear(256 -> 128) -> ReLU -> Linear(128 -> 1)",
+  "training_time_seconds": 95.1772232055664
+}
