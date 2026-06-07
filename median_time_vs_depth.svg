@@ -1,0 +1,47 @@
+<svg width="800" height="500" viewBox="0 0 800 500" xmlns="http://www.w3.org/2000/svg">
+<rect width="100%" height="100%" fill="#121824"/>
+<line x1="80" y1="430.0" x2="750" y2="430.0" stroke="#243049" stroke-width="1" stroke-dasharray="4"/>
+<text x="70" y="434.0" fill="#94a3b8" font-family="system-ui, sans-serif" font-size="12" text-anchor="end">0.00 ms</text>
+<line x1="80" y1="335.0" x2="750" y2="335.0" stroke="#243049" stroke-width="1" stroke-dasharray="4"/>
+<text x="70" y="339.0" fill="#94a3b8" font-family="system-ui, sans-serif" font-size="12" text-anchor="end">111.06 ms</text>
+<line x1="80" y1="240.0" x2="750" y2="240.0" stroke="#243049" stroke-width="1" stroke-dasharray="4"/>
+<text x="70" y="244.0" fill="#94a3b8" font-family="system-ui, sans-serif" font-size="12" text-anchor="end">222.12 ms</text>
+<line x1="80" y1="145.0" x2="750" y2="145.0" stroke="#243049" stroke-width="1" stroke-dasharray="4"/>
+<text x="70" y="149.0" fill="#94a3b8" font-family="system-ui, sans-serif" font-size="12" text-anchor="end">333.18 ms</text>
+<line x1="80" y1="50.0" x2="750" y2="50.0" stroke="#243049" stroke-width="1" stroke-dasharray="4"/>
+<text x="70" y="54.0" fill="#94a3b8" font-family="system-ui, sans-serif" font-size="12" text-anchor="end">444.24 ms</text>
+<line x1="80.0" y1="50" x2="80.0" y2="430" stroke="#243049" stroke-width="1" stroke-dasharray="4"/>
+<text x="80.0" y="455" fill="#94a3b8" font-family="system-ui, sans-serif" font-size="12" text-anchor="middle">K=7</text>
+<line x1="175.71428571428572" y1="50" x2="175.71428571428572" y2="430" stroke="#243049" stroke-width="1" stroke-dasharray="4"/>
+<text x="175.71428571428572" y="455" fill="#94a3b8" font-family="system-ui, sans-serif" font-size="12" text-anchor="middle">K=8</text>
+<line x1="271.42857142857144" y1="50" x2="271.42857142857144" y2="430" stroke="#243049" stroke-width="1" stroke-dasharray="4"/>
+<text x="271.42857142857144" y="455" fill="#94a3b8" font-family="system-ui, sans-serif" font-size="12" text-anchor="middle">K=9</text>
+<line x1="367.1428571428571" y1="50" x2="367.1428571428571" y2="430" stroke="#243049" stroke-width="1" stroke-dasharray="4"/>
+<text x="367.1428571428571" y="455" fill="#94a3b8" font-family="system-ui, sans-serif" font-size="12" text-anchor="middle">K=10</text>
+<line x1="462.85714285714283" y1="50" x2="462.85714285714283" y2="430" stroke="#243049" stroke-width="1" stroke-dasharray="4"/>
+<text x="462.85714285714283" y="455" fill="#94a3b8" font-family="system-ui, sans-serif" font-size="12" text-anchor="middle">K=11</text>
+<line x1="558.5714285714286" y1="50" x2="558.5714285714286" y2="430" stroke="#243049" stroke-width="1" stroke-dasharray="4"/>
+<text x="558.5714285714286" y="455" fill="#94a3b8" font-family="system-ui, sans-serif" font-size="12" text-anchor="middle">K=12</text>
+<line x1="654.2857142857142" y1="50" x2="654.2857142857142" y2="430" stroke="#243049" stroke-width="1" stroke-dasharray="4"/>
+<text x="654.2857142857142" y="455" fill="#94a3b8" font-family="system-ui, sans-serif" font-size="12" text-anchor="middle">K=13</text>
+<line x1="750.0" y1="50" x2="750.0" y2="430" stroke="#243049" stroke-width="1" stroke-dasharray="4"/>
+<text x="750.0" y="455" fill="#94a3b8" font-family="system-ui, sans-serif" font-size="12" text-anchor="middle">K=14</text>
+<text x="400.0" y="30" fill="#f8fafc" font-family="system-ui, sans-serif" font-size="16" font-weight="bold" text-anchor="middle">Median Solve Time vs. Scramble Depth (K)</text>
+<polyline points="80.0,429.97138676955603 175.71428571428572,429.923270350648 271.42857142857144,429.7220367942372 367.1428571428571,429.4045967398948 462.85714285714283,428.3577117749071 558.5714285714286,424.4306848994616 654.2857142857142,385.0585804175224 750.0,84.54545454545456" fill="none" stroke="#3b82f6" stroke-width="3"/>
+<circle cx="80.0" cy="429.97138676955603" r="6" fill="#60a5fa" stroke="#1d4ed8" stroke-width="2"/>
+<text x="80.0" y="417.97138676955603" fill="#f8fafc" font-family="system-ui, sans-serif" font-size="11" font-weight="bold" text-anchor="middle">0.03</text>
+<circle cx="175.71428571428572" cy="429.923270350648" r="6" fill="#60a5fa" stroke="#1d4ed8" stroke-width="2"/>
+<text x="175.71428571428572" y="417.923270350648" fill="#f8fafc" font-family="system-ui, sans-serif" font-size="11" font-weight="bold" text-anchor="middle">0.09</text>
+<circle cx="271.42857142857144" cy="429.7220367942372" r="6" fill="#60a5fa" stroke="#1d4ed8" stroke-width="2"/>
+<text x="271.42857142857144" y="417.7220367942372" fill="#f8fafc" font-family="system-ui, sans-serif" font-size="11" font-weight="bold" text-anchor="middle">0.32</text>
+<circle cx="367.1428571428571" cy="429.4045967398948" r="6" fill="#60a5fa" stroke="#1d4ed8" stroke-width="2"/>
+<text x="367.1428571428571" y="417.4045967398948" fill="#f8fafc" font-family="system-ui, sans-serif" font-size="11" font-weight="bold" text-anchor="middle">0.70</text>
+<circle cx="462.85714285714283" cy="428.3577117749071" r="6" fill="#60a5fa" stroke="#1d4ed8" stroke-width="2"/>
+<text x="462.85714285714283" y="416.3577117749071" fill="#f8fafc" font-family="system-ui, sans-serif" font-size="11" font-weight="bold" text-anchor="middle">1.92</text>
+<circle cx="558.5714285714286" cy="424.4306848994616" r="6" fill="#60a5fa" stroke="#1d4ed8" stroke-width="2"/>
+<text x="558.5714285714286" y="412.4306848994616" fill="#f8fafc" font-family="system-ui, sans-serif" font-size="11" font-weight="bold" text-anchor="middle">6.51</text>
+<circle cx="654.2857142857142" cy="385.0585804175224" r="6" fill="#60a5fa" stroke="#1d4ed8" stroke-width="2"/>
+<text x="654.2857142857142" y="373.0585804175224" fill="#f8fafc" font-family="system-ui, sans-serif" font-size="11" font-weight="bold" text-anchor="middle">52.54</text>
+<circle cx="750.0" cy="84.54545454545456" r="6" fill="#60a5fa" stroke="#1d4ed8" stroke-width="2"/>
+<text x="750.0" y="72.54545454545456" fill="#f8fafc" font-family="system-ui, sans-serif" font-size="11" font-weight="bold" text-anchor="middle">403.85</text>
+</svg>

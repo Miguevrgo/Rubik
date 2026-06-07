@@ -1,0 +1,801 @@
+Cube_Num,K_Scramble,Scramble,Solution,Solution_Length,Time_ms
+1,7,"U' L' F' B' L B D'","D B' L' F B L U",7,14.0935
+2,7,"L' U F' L B U L'","L U' B' L' F U' L",7,0.0155
+3,7,"U B' L' F D U' B'","B U D' F' L B U'",7,0.0170
+4,7,"U' L B L' D' U F","F' U' D L B' L' U",7,0.1080
+5,7,"U' R D' L' U D' F","F' U U2 D L D R' U",8,0.0156
+6,7,"R' U' L' D B' U' R","R' U B D' L U R",7,0.0127
+7,7,"U L' U F L R L'","R' F' U' L U'",5,0.0056
+8,7,"B L U' D U L U'","U L' D' L' B'",5,0.0076
+9,7,"B' D F R F' L' U'","U L F R' F' D' B",7,0.0260
+10,7,"F' R' U F R' B' D'","D B R F' U' R F",7,0.0215
+11,7,"R F' R L' D' F' B","B' F D R' L F R'",7,0.0809
+12,7,"B L' R' F' R' U R'","R U' R F R L B'",7,0.0123
+13,7,"F D F' B' F' R D","D' R' F2 B D' F'",6,0.0109
+14,7,"D B' D U' D F' U","U' F U D2 B D'",6,0.0052
+15,7,"L U' L R U L D'","D L' U' R' L' U L'",7,0.0456
+16,7,"F' D L' F B F' L","L' B' L D' F",5,0.0066
+17,7,"D' B' R D' F' D' L","L' D F D R' B D",7,0.0162
+18,7,"F' D R B L D R'","R D' L' B' R' D' F",7,0.1110
+19,7,"D' F' D' L B L' D","D' L B' L' D F D",7,0.0733
+20,7,"D' F B' L R' B F","F' B' R L' F' B D",7,0.1217
+21,7,"F L' B' D' R L U","U' R' L' D B L F'",7,0.0353
+22,7,"R L' D' R' F' B L'","L F B' R D R' L",7,0.1321
+23,7,"D R' B' D' R D' L'","L D R' D B R D'",7,0.0511
+24,7,"L' D L F' D' B' F'","F B D F L' D' L",7,0.5509
+25,7,"D U' F' B' R D L","L' D' R' F B U D'",7,0.1045
+26,7,"L' U L' F U L U","U' L' U' F' L U' L",7,0.0587
+27,7,"F' R D U' R U' L'","L U R' U D' R' F",7,0.0475
+28,7,"B' U D' U' L R D","D' R' L' D B",5,0.0145
+29,7,"U R' B D' R' D L'","L D' R D B' R U'",7,0.0438
+30,7,"F' U' D U' D' F R","R' F' U2 F",4,0.0049
+31,7,"R L' R F' L' B' U'","U B L F R2 L",6,0.0113
+32,7,"D U' D B F U L'","L U' F' B' U D2",6,0.0354
+33,7,"U B L R' L U' R","R' U R L2 B' U'",6,0.0586
+34,7,"F L' D' F' L D F'","F D' L' F D L F'",7,0.0263
+35,7,"R' B R' B L' B' F","F' B L B' R B' R",7,0.2823
+36,7,"F D F L' R D' F'","F D R' L F' D' F'",7,0.0205
+37,7,"L B' F L' U D U'","D' L F' B L'",5,0.0111
+38,7,"R' U B' L U' B L","L' B' U L' B U' R",7,0.0568
+39,7,"D R D' R D L B","B' L' D' R' D R' D'",7,0.1159
+40,7,"F' B U R F R' U'","U R F' R' U' F B'",7,0.0246
+41,7,"U' L' B' R B' L' D'","D L B R' B L U",7,0.0384
+42,7,"D' U F U' R' U R'","R U' R U F' U' D",7,0.0818
+43,7,"L B U B F' R U","U' R' F B' U' B' L'",7,0.0222
+44,7,"R U' L' D' B R U","U' R' B' D L U R'",7,0.0258
+45,7,"R D' R F B' L' B'","B L F' B R' D R'",7,0.1519
+46,7,"U L' F' R U R' L","R L' U' R' F L U'",7,0.0584
+47,7,"U B U' B' R' D' U'","U D R B U B' U'",7,0.0272
+48,7,"U' F R' B' R D L","L' D' R' B R F' U",7,0.0455
+49,7,"B F' D' F U R L","R' L' U' F' D F B'",7,0.5365
+50,7,"L' B' D' U' L U' L","L' U L' U D B L",7,0.0158
+51,7,"F U' L' D' B R' U","U' R B' D L U F'",7,0.0189
+52,7,"F' L R' B U' F' D","D' F U B' R L' F",7,0.0229
+53,7,"L F R L' B' R' L'","R L B R' L F' L'",7,0.2857
+54,7,"F U F R F R' L","R L' F' R' F' U' F'",7,0.6126
+55,7,"B' D B R U' L R'","R L' U R' B' D' B",7,0.0266
+56,7,"R L' B U D' F U","U' F' U' D B' R' L",7,0.0240
+57,7,"U R F U B L D","D' L' B' U' F' R' U'",7,0.0248
+58,7,"L R' U' L U L' B'","B L U' L' U R L'",7,0.0926
+59,7,"L' B R' B L U D","U' D' L' B' R B' L",7,0.0469
+60,7,"L D' L F' L' D B'","B D' L F L' D L'",7,0.0803
+61,7,"R L' D' R B U' R'","R U B' R' D R' L",7,0.0164
+62,7,"D' U D U D' U' L","L' U' D",3,0.0058
+63,7,"D' R D U F B F","F2 B' U' D' R' D",6,0.0253
+64,7,"B' R' B' L B' R F'","F R' B L' B R B",7,0.0303
+65,7,"R U' F U D L' U'","U L U' D' F' U R'",7,0.0604
+66,7,"B D U' D L U' D'","U D L' U D2 B'",6,0.0066
+67,7,"U D' R' F' D L' D","D' L D' F R U' D",7,0.0190
+68,7,"F B' L' R' B R' L","R L' B' R L F' B",7,0.0711
+69,7,"B' D' R' D L' F' R","R' F L D' R D B",7,0.0187
+70,7,"R L' B' U B R D","D' R' B' U' B R' L",7,0.6220
+71,7,"D' F L R B D L","L' D' B' R' L' F' D",7,0.0659
+72,7,"D' B' F D F B U","U' F' B' D' F' B D",7,0.0651
+73,7,"F D L' B' D F' L","L' F D' B L D' F'",7,0.0346
+74,7,"U D' L' B' F' B' R","R' F B2 L U' D",6,0.0136
+75,7,"D' B' F B' U' D' U'","U2 D F' B2 D",5,0.0053
+76,7,"R' F D F' B D' L'","L D F B' D' F' R",7,0.0506
+77,7,"R L F' L U F' D'","D F U' L' F R' L'",7,0.0359
+78,7,"L B' D' B L F D","D' F' L' B' D B L'",7,0.0517
+79,7,"U R L' D' B' D U'","U D' B D R' L U'",7,0.0143
+80,7,"D F' B' L' D' F' R","R' F D L F B D'",7,0.0549
+81,7,"B' L' F R' B' L R","R' L' B R F' L B",7,0.1147
+82,7,"B' L' R' F D B F","F' B' D' F' R L B",7,0.0234
+83,7,"B R B' D B' L' D","L D' B D' R'",5,0.0061
+84,7,"D' F' B F' B' U' B","B' U F2 D",4,0.0045
+85,7,"U' R' U B F' B R","R' F B2 U' R U",6,0.0117
+86,7,"L' D' L' U L U D'","U' D L' U' L D L",7,0.3714
+87,7,"R D' B D' F' D' R","R' D F D B' D R'",7,0.0173
+88,7,"U' B' D B F' D F'","F D' F B' D' B U",7,0.1081
+89,7,"F L' R' L R' B' L'","L B R2 F'",4,0.0064
+90,7,"R' U' F R L B' D","D' B R' L' F' U R",7,0.0489
+91,7,"R' U F U B' R' B'","B R B U' F' U' R",7,0.0363
+92,7,"D B' R D' B L' D'","D L B' D R' B D'",7,0.0261
+93,7,"L B D L D' U L","L' U' D L' D' B' L'",7,0.0461
+94,7,"R L' U' D' L D R","R' D' L' U D R' L",7,0.1122
+95,7,"L R U L R' U' R","R' U R L' U' R' L'",7,0.0323
+96,7,"U' D' F' L U L R'","R L' U' L' F U D",7,0.0660
+97,7,"R U' R' L R' D R","R' D' R2 L' U R'",6,0.0102
+98,7,"D' U R L R' U' B'","B U L' U' D",5,0.0087
+99,7,"D' R B' F D R B","B' R' D' F' B R' D",7,0.0481
+100,7,"F' U' R' F' L B F","F' B' L' F R U F",7,0.0282
+101,8,"L' U' L F U L' U' F'","F U L U' F' L' U L",8,0.3473
+102,8,"L' F' B' U' D' F L' F'","F L F' U D F B L",8,0.2123
+103,8,"R F' U' R' F' U' R D'","D R' U F R U F R'",8,0.4460
+104,8,"U' F U' B' F B D' B","B' D F' U F' U",6,0.0322
+105,8,"R' U' F' D' L F L R'","L' R F' L' D F U R",8,0.0650
+106,8,"D' R' U R' B F' D R","R' D' F B' R U' R D",8,0.0865
+107,8,"U' L D R' F D L' U","U' L D' F' R D' L' U",8,0.0436
+108,8,"B' U' D R' D' R' B L","L' B' R D R U D' B",8,0.5036
+109,8,"B D' B' D' U' B D' U'","U D B' U D B D B'",8,1.0143
+110,8,"R' D F L' D' B F' B'","F D L F' D' R",6,0.0241
+111,8,"U R' F' L F R B R","R' B' R' F' L' F R U'",8,0.0740
+112,8,"L F' D' U' R F' U' R'","R U F R' U D F L'",8,0.1495
+113,8,"R' F L D' U' B R L","L' R' B' U D L' F' R",8,0.0850
+114,8,"L' U' B F' L U L B","B' L' U' L' F B' U L",8,0.1389
+115,8,"B L' U R B' D' L U'","U L' D B R' U' L B'",8,0.0393
+116,8,"L' F' B' D' U D U B'","B U2 F B L",5,0.0075
+117,8,"F L D F' U B F U","U' F' B' U' F D' L' F'",8,0.0997
+118,8,"B' F D L' B R' F U'","U F' R B' L D' F' B",8,0.1902
+119,8,"F' B' L' F B' U B' L","L' B U' F' B L F B",8,1.0502
+120,8,"U' R' U' L U' B F' R","R' F B' U L' U R U",8,0.1709
+121,8,"B R D' B' D' R F' B'","F B R' D B D R' B'",8,0.1311
+122,8,"L' R B L D' U' F R","R' F' U D L' B' R' L",8,0.0180
+123,8,"F L F U B' L' F U","U' F' L B U' F' L' F'",8,0.0318
+124,8,"B U' R' B R' B U' F'","F U B' R B' R U B'",8,0.0306
+125,8,"L U' L' B' L R' F U'","U F' R L' B L U L'",8,0.0728
+126,8,"D' F L F' U' D B' F'","F B U D' F L' F' D",8,0.3950
+127,8,"F' R' B' L' F' L F' B'","F B L' F L B R F",8,0.3066
+128,8,"F' L B L F' B' R L'","L R' F B L' B' L' F",8,2.4033
+129,8,"D' R' U' D' R' B D L","L' D' B' R U D R D",8,0.1380
+130,8,"F R D' L U' R F L","L' F' R' U L' D R' F'",8,0.0389
+131,8,"D F R F' U' F' U F","F' U' F U F R' F' D'",8,0.1916
+132,8,"L' B L' R' F R' D' F'","F D R F' R L B' L",8,0.0424
+133,8,"U' B U F R D' B F","F' B' D R' F' U' B' U",8,0.0708
+134,8,"R' F U' L U' R L' F'","F L R' U L' U F' R",8,0.1083
+135,8,"B U B D' U' D' F' L","L' F U D2 B' U' B'",7,0.0337
+136,8,"F L' B' L' B F' U' L","L' U F B' L B L F'",8,0.9582
+137,8,"D F U' D U' F B' D'","D F' B U2 D' F' D'",7,0.0255
+138,8,"D R' L D R L F' D'","D F R' L' D' R L' D'",8,0.2438
+139,8,"U L' D' F D U R B","B' R' U' D' F' D L U'",8,0.0678
+140,8,"U F' L' D' R' D' R' U","U' R D R D L F U'",8,0.6583
+141,8,"D R F' U D R F' U'","U F R' U' D' F R' D'",8,0.0750
+142,8,"D F' D' R' D U' B R","R' B' U D' R D F D'",8,1.3447
+143,8,"U L' F' R L' D' L B","B' L' D R' L F L U'",8,0.1632
+144,8,"L R L R B U' R' U","U' R U B' R2 L2",6,0.0073
+145,8,"B U B' L F B L R","L' R' F' B' L' B U' B'",8,0.5386
+146,8,"F L' F' L' F' D' F' U'","U F D F L F L F'",8,2.3840
+147,8,"D B' U' D' U F' D' F'","F D F D B D'",6,0.0157
+148,8,"R' L' R L' B' L R L'","R' B L2",3,0.0041
+149,8,"R' B F' D B' F D U'","U D' F' B D' F B' R",8,1.8886
+150,8,"B' R' B' L R U' B' D","D' B U R' L' B R B",8,0.0807
+151,8,"D F D' U F' L' D' R","R' D L F U' D F' D'",8,0.4581
+152,8,"R' B' R D' F' U' L U","U' L' U F D R' B R",8,0.0360
+153,8,"R' D R' F U B' L' U","U' L B U' F' R D' R",8,0.0217
+154,8,"R D' L F' U' D B' U'","U B U D' F L' D R'",8,0.0171
+155,8,"D' U F' U D' U L F'","F L' U2 D F U' D",7,0.0935
+156,8,"U L' F R' U L U' B","B' U L' U' R F' L U'",8,0.0269
+157,8,"R' F' D L' D' L' U B'","B U' L D L D' F R",8,0.0860
+158,8,"B' R' F L B' L' D B'","B D' L B L' F' R B",8,0.2772
+159,8,"D B F' L U B U D","U' D' B' U' L' F B' D'",8,0.1024
+160,8,"F' R' F L' U' D' L' F'","F L U D L F' R F",8,0.0881
+161,8,"L U B' F L D' U L'","L U' D L' F' B U' L'",8,0.4519
+162,8,"B R' D' R U D' B' U","U' B U' D R' D R B'",8,0.0642
+163,8,"B U L' R' L' R B' D","D' B L2 U' B'",5,0.0060
+164,8,"B' D B L B F' D L'","L D' F B' L' B' D' B",8,0.2361
+165,8,"R' F' L' F D F' U' B","B' U F D' F' L F R",8,0.1313
+166,8,"F' L U' L F B U' D'","U D F' B' L' U L' F",8,0.0309
+167,8,"R F' L U' F' D R B","B' R' D' F U L' F R'",8,0.6426
+168,8,"R' U D R B L R' D","D' R L' B' R' U' D' R",8,0.0913
+169,8,"B U L D F' L R' D'","D R L' F D' L' U' B'",8,0.0646
+170,8,"L' B D' R F R U L","L' U' R' F' R' D B' L",8,0.1326
+171,8,"L B' L U F' L F U'","U F' L' F U' L' B L'",8,0.0304
+172,8,"D B D' U' L U B F","F' B' U' L' U D B' D'",8,0.2167
+173,8,"B R F' L F' L B' R","R' B L' F L' F R' B'",8,0.0272
+174,8,"U F' D' B U' D B' D","D' B U D' B' D F U'",8,0.2034
+175,8,"U' D' F D R L' U B'","B U' R' L D' F' U D",8,0.4314
+176,8,"D R D U' B' D L U","U' L' D' B U D' R' D'",8,0.2014
+177,8,"B R' B' D U' L D' R'","R D L' U D' B R B'",8,1.4634
+178,8,"F L' F R D' B L B'","B L' B' D R' F' L F'",8,0.0721
+179,8,"U' D F' B' U' R' L R'","R2 L' U F B U D'",7,0.0336
+180,8,"D R' D' R' U' F U' R'","R U F' U R D R D'",8,0.1968
+181,8,"U' D' R' F' B' D U B","B' U' D' F B R U D",8,0.0840
+182,8,"F R F' D' L' D' L R","L' R' D L D F R' F'",8,0.6524
+183,8,"B' F' R' L F B R B","B' R' F' B' R L' F B",8,0.7814
+184,8,"U' D' U L' B U R' U'","U R U' B' L D",6,0.0047
+185,8,"D R L' D' R L B F","F' B' R' L' D R' L D'",8,0.3742
+186,8,"B U L B D' B' F' D'","D F B D B' L' U' B'",8,0.2946
+187,8,"F R D' F' U' B D' F","F' D B' U F D R' F'",8,0.0360
+188,8,"B' R' F' L U' L R' L","R L2 U L' F R B",7,0.0453
+189,8,"U' R D B' D' R' L F'","F R L' D B D' R' U",8,0.2276
+190,8,"F L D F B' F D' F'","F D F2 B D' L' F'",7,0.0418
+191,8,"D' U' L' U R B D' R'","R D B' R' U' L U D",8,0.0532
+192,8,"D L' U' L' B D' L B'","B L' D B' L U L D'",8,0.0590
+193,8,"U B' L U L' F B U","U' F' B' L U' L' B U'",8,0.1070
+194,8,"U' F' D' R L B' R B'","B R' B R' L' D F U",8,0.0792
+195,8,"R F R' U' L D' F' R'","R F D L' U R F' R'",8,0.0635
+196,8,"B' L B' R' L D B D'","D B' D' R L' B L' B",8,1.2867
+197,8,"D' U' D' B' F L D B","B' D' L' F' B U D2",7,0.0365
+198,8,"R' L' F' U L B U R","R' U' B' L' U' F R L",8,0.1111
+199,8,"F D' L B R' D' B L","L' B' D R B' L' D F'",8,0.0244
+200,8,"R' F B' R U' F L' D'","D L F' U R' F' B R",8,0.0414
+201,9,"L' F L U' R' L R' B F","F' B' R2 L' U L' F' L",8,0.0492
+202,9,"B' D R D U L B' L' R'","L R B L' U' D' R' D' B",9,0.4624
+203,9,"R' L D R L' B' U' B' R","R' B U B R' L D' R L'",9,3.7386
+204,9,"F R D' R' F' U R B F","F' B' R' U' F R D R' F'",9,0.5142
+205,9,"U' B F D R L' U B R'","R B' U' R' L D' F' B' U",9,0.1428
+206,9,"F D F R U' B' R D R","R' D' R' B U R' F' D' F'",9,2.3212
+207,9,"U' R' U' B D' F' D' U R'","R U' D F D B' U R U",9,0.6344
+208,9,"U B F' B D' L' R' L' F","F' R L2 D F B2 U'",7,0.0290
+209,9,"F B' D F' D' F B' U' L","L' U F' B D F D' F' B",9,2.8415
+210,9,"F' D R' F D' F' B D' F'","F D F B' D F' R D' F",9,0.4726
+211,9,"F' R' D' U F' B L B' U'","U B L' F B' U' D R F",9,0.3199
+212,9,"B U' F' B D' R F' B L","L' F B' R' D F B' U B'",9,0.0856
+213,9,"L' U L B' R' F U B U'","U B' U' F' R B L' U' L",9,0.2304
+214,9,"U' F' L' B R' L D U' L","L' U D' R L' B' L F U",9,0.5463
+215,9,"U' D' B D' B' R L' R B","B' R2 L B D B' U D",8,0.1864
+216,9,"B' F' L U D' L' U' B R","R' B' U L U' D L' F B",9,0.2279
+217,9,"D' U' R' D' B U R B D","D' B' R' U' B' D R U D",9,0.4635
+218,9,"F L F U' B R' B D B","B' D' B' R F' F B' U F' L' F'",11,2.8180
+219,9,"D' L U' D F' R' L' U' L","L' U R L F U D' L' D",9,1.1099
+220,9,"B F L' D' R L B F L'","L F' B' R' L' D L F' B'",9,0.3787
+221,9,"F D' R F' L D' B L' R","L R' B' D L' F R' D F'",9,0.3458
+222,9,"L' U D' L' F' B D F U'","U F' D' F B' L U' D L",9,5.0333
+223,9,"F' B' U F' B' L F' L D","D' L' F L' F B U' F B",9,0.0746
+224,9,"U F L' R' F' L F B U","U' F' B' L' F R L F' U'",9,0.3288
+225,9,"F' R F U' F B' F' D' U'","U D B U F' R' F",7,0.0319
+226,9,"D U' L' D' U B F U D'","U' D F' B' U' D L U D'",9,5.2422
+227,9,"U' D' R L D' R L D U'","U D' L2 R' L D R' L' U D",10,3.7596
+228,9,"F L' U' L B' U' L' U' D'","U D L U B L' U L F'",9,0.4261
+229,9,"R L' U' F' R F' R' L' F","F' L R F R' F U R' L",9,0.3211
+230,9,"U B R' L' F L' U' L' U","U' L U L F' R L B' U'",9,0.4493
+231,9,"B R L F' L D L' R F","F' L R' D' L' F R' L' B'",9,0.9796
+232,9,"F D L' U B U F' U' F'","F U F U' B' U' L D' F'",9,0.2127
+233,9,"L' R F' D' F' U L F L","L' F' L' U' F D F R' L",9,0.5223
+234,9,"L D' R' B R U B D B'","R B L B' L' B' R' U' L'",9,46.6689
+235,9,"D B' F B F D U D' R","R' U' F2 D'",4,0.0039
+236,9,"L F' U' R B L R' D L","L' D' R L' B' R' U F L'",9,0.2277
+237,9,"R' F L' R' U' D R B F'","F B' R' U D' R L F' R",9,0.4983
+238,9,"U D R D U R D' U D","U' R' U' D' R' U' D'",7,0.0102
+239,9,"U' R' U' L U D F' L' R","L R' F U' D' L' U R U",9,0.6720
+240,9,"R U' D' R' L B' F' U D'","U' D F B R L' U D R'",9,0.3694
+241,9,"R U' R' B L D U' R L'","L R' U D' L' B' R U R'",9,0.6761
+242,9,"D U' F B' L' R U R' L'","L2 F' B U D' L'",6,0.0255
+243,9,"R' D F' D' U B' F' R F","F' R' F B U' D F D' R",9,0.0215
+244,9,"L F' B' F' L B F U D'","U' D F' B' L' F2 B L'",8,0.2889
+245,9,"R' U B F U B U R' D","D' R U' B' U' F' B' U' R",9,2.4365
+246,9,"F L B' D F' D' F' B' F","B D F D' B L' F'",7,0.0413
+247,9,"B L' R D' L D' L' U' B'","B U L D L' D R' L B'",9,3.1029
+248,9,"R F L U L' F U' R' B'","B R U F' L U' L' F' R'",9,3.7300
+249,9,"L' B' R B R' U L' U' D'","U D L U' R B' R' B L",9,0.1824
+250,9,"F' D' R F L' F D' F' U'","U F D F' L F' R' D F",9,0.1837
+251,9,"R F B F L' B F U' F'","F U F' B' L F2 B' R'",8,0.0552
+252,9,"L' D' B D F' D' U' D B'","B U F D' B' D L",7,0.0296
+253,9,"B R' F' D U B' F' R' F'","F R F B U' D' F R B'",9,0.2622
+254,9,"D F' D F' U' F U' D L'","L U D' F' U F D' F D'",9,1.3336
+255,9,"B' U F' R' F R D' U D'","U' D2 R' F' R F U' B",8,0.3807
+256,9,"U' R' B R' D L F D B'","B D' F' L' D' R B' R U",9,0.2710
+257,9,"B' D' F' D R' L B L D'","D L' B' R L' D' F D B",9,0.5440
+258,9,"L U D' B' L R B' L R","L' R' B R' L' B U' D L'",9,3.2380
+259,9,"R L' F' B' R' F D' L' R'","L R D F' R F B R' L",9,0.5040
+260,9,"R F' B' D' R D' F L' R","L R' F' D R' D F B R'",9,0.4145
+261,9,"F' U D L U' R F B' D'","D F' B R' U L' U' D' F",9,0.6875
+262,9,"D B D' F' U' D R L' U","U' L R' U D' F D B' D'",9,3.4346
+263,9,"D B L B R' U' F L' R","L R' F' U R B' L' B' D'",9,3.0766
+264,9,"D' L R F' D R F' B' F","B R' D' F R' L' D",7,0.0778
+265,9,"U D' U D F L' F' B D","D' F B' L F' U2",6,0.0182
+266,9,"U B' R' F' B' D' L U F'","F U' L' D F B R B U'",9,0.0426
+267,9,"D' B U B' D' L U' L' U'","U L U L' D B U' B' D",9,0.0468
+268,9,"D R' D' U' F' D' R' D' B'","B D R D F U D R D'",9,0.3598
+269,9,"B' D R F D' B F R D'","D R' F' B' D F' R' D' B",9,0.2164
+270,9,"B F' D' U L F U L' B","B' L U' F' L' U' D F B'",9,0.6432
+271,9,"F' D R' L B U B F' U'","U F B' U' B' R L' D' F",9,0.5076
+272,9,"R' B D' F' L R' U F' L","L' F U' R L' F D B' R",9,0.2821
+273,9,"R' F' B' R F' D B L D'","D L' B' D' F R' F B R",9,0.1051
+274,9,"B' U' R' U' B F L R B","B' L' R' F' B' U R U B",9,0.3002
+275,9,"L U F' D L' R' D U' L","L' U D' R L D' F U' L'",9,0.1346
+276,9,"D' L B L R' F B' R' L","L' R F' B R L' B' L' D",9,1.7489
+277,9,"R' L F' U B' L' F L' F'","F L F' L B U' F R L'",9,0.6109
+278,9,"U B' L U L' R F U' B","B' U F' R' L U' L' B U'",9,0.3391
+279,9,"L' B' R F' D' L' B' U' D'","U D B L D F R' B L",9,0.0425
+280,9,"F' R' F R F' L' U' F' R","R' F U L F R' F' R F",9,2.5381
+281,9,"U R' L' U B' F D' L D'","D L' D F' B U' R L U'",9,0.1363
+282,9,"F D F B' F' B R U L","L' U' R' D' F'",5,0.0069
+283,9,"B U R' B D F R' B D'","D B' R F' D' B' R U' B'",9,0.0656
+284,9,"F U' B' R B D' R' L' F","F' L R D B' R' B U F'",9,0.0853
+285,9,"D U B' D U' B L B' L","L' B L' B' U D' B U' D'",9,1.0367
+286,9,"R U F B' D' L' D R D","D' R' D' L D F' B U' R'",9,0.2581
+287,9,"F' L D' U' D R' B F D","D' F' B' R U L' F",7,0.0921
+288,9,"D R U' R' L R' F R D","D' R' F' R2 L' U R' D'",8,0.0620
+289,9,"F' U' B U' D' L' D L F","F' L' D' L U D B' U F",9,0.2568
+290,9,"B' R' U B' U B D' F R'","R F' D B' U' B U' R B",9,0.1759
+291,9,"B' R D' R' F' U F' L' D'","D L F U' F R D R' B",9,0.0704
+292,9,"R' F' U' F U B U' D' B","B' U D B' U' F' U F R",9,0.9220
+293,9,"F' U' L B' U F R' D U'","U D' R F' U' B L' U F",9,0.0492
+294,9,"F U' B' D B U' D' B' R'","R B U D B' D' B U F'",9,0.2866
+295,9,"U' B' D' U D' B' L' U' R","R' U L B U' D2 B U",8,0.0584
+296,9,"B U' B' U L B R U' D","U D' R' B' L' U' B U B'",9,0.8972
+297,9,"F' R U' L' B U' B L' F'","F L B' U B' L U R' F",9,0.5898
+298,9,"R' U R D' F' U' L' U' D'","U D L U F D R' U' R",9,0.2022
+299,9,"F D U' B R U F' D' B'","B D F U' R' B' U D' F'",9,0.1801
+300,9,"L D F' D U' B U D' B","B' U' D B' U D' F D' L'",9,1.5783
+301,10,"R' U' R F' L' B F' U' R L'","L R' U F B' L F R' U R",10,0.8475
+302,10,"L' R' D B U' F D' B D L'","L D' B' D F' U B' D' R L",10,0.2526
+303,10,"F' R' F L U' B' U L D F","F' D' L' U' B U L' F' R F",10,0.1600
+304,10,"D' B D F B' L' F' L F U","U' F' L' F L F' B D' B' D",10,38.6170
+305,10,"L' F D L R' L' B' R U L","L' U' R' B R D' F' L",8,0.0238
+306,10,"R B R' D L U' B D' U B'","B U' D B' U L' D' R B' R'",10,2.4358
+307,10,"D F L B D' U L' D' F L'","L F' D L U' D B' L' F' D'",10,4.2815
+308,10,"D' U' B' L' R' D' U R' L U'","U L' R U' D R L B U D",10,0.3949
+309,10,"L D' F' B' R L' B R' F' D","D' F R B' R' U U' L F B D L'",12,4.9089
+310,10,"R' B F' L' F B' U' L R B","B' L' R' U F' B L F B' R",10,6.9600
+311,10,"L R L D U' L B' D U' D","U D2 B D' D L' U D' R' L2",10,0.0211
+312,10,"R' F L' F U' D' L F' U' B'","B U F L' U D F' L F' R",10,5.0494
+313,10,"U R' B' R' F' D U' F U' F'","F U F' U D' F R B R U'",10,5.3411
+314,10,"L F D B' F L F' B' L B","B' L' F B L' F' B D' F' L'",10,4.5672
+315,10,"B' F U D R L' F U F' B","F B' U' F' R' L U' D' F' B",10,4.3393
+316,10,"B' D F U' R D' B L' D F","F' D' L B' D R' U F' D' B",10,0.0734
+317,10,"L' U R L' F' L' R' U F' R","R' F U' R L F R' L U' L",10,0.4054
+318,10,"U' R' F U' R U' B F' U B","B' U' F B' U R' U F' R U",10,0.4516
+319,10,"F L R U' L R' B' F L D'","D L' F' B R L' U R' L' F'",10,2.4367
+320,10,"U' F' R' B' L U B' U L B","B' L' U' B U' L' B R F U",10,5.6196
+321,10,"R' F D' B F' R L' F L U'","U L' F' R' L F B' D F' R",10,2.6929
+322,10,"R L U' L' D L R' B' D R","R' D' B R L' D' L U R' L'",10,3.4712
+323,10,"U' B R' L R F' B L' F' D'","D F L F B' L' B' U",8,0.1618
+324,10,"B D' R' L' D' F' B U L' D","D' L U' F B' D R L D B'",10,0.6860
+325,10,"B L U' B D U' L' B' U' R'","R U B L U D' B' U L' B'",10,2.3053
+326,10,"U' B U R' D' L' R' U' D U'","U2 D' R L D R U' B' U",9,0.9266
+327,10,"U L' B' D' F R' U' L' R' U'","U L R U R F' D B L U'",10,0.1698
+328,10,"B' D B' F U F B D B F'","F B' D' F' B' U' F' B D' B",10,5.1856
+329,10,"D B R' L' U' D B U D B","B' U' D' B' U D' R L B' D'",10,1.4717
+330,10,"U' F B F U' D' F' D U' L","L' U D' F U D F2 B' U",9,0.0430
+331,10,"U' R B L' B' D' R D' B U","U' B' D R' D B L B' R' U",10,0.0377
+332,10,"D F' B R B' U' D' U D' F'","F D2 B R' F B' D'",7,0.2599
+333,10,"D' L D' R' B' U' D' R' B' F'","F B R U D B R D L' D",10,0.3007
+334,10,"D' R U' B R' F' U' L U' F'","F U L' U F R B' U R' D",10,0.3109
+335,10,"F' U' D' L' U F' B' L' B F'","F B' L F B U' L U D F",10,0.8205
+336,10,"R U L' F D U' F' D' L R'","L' R D F U D' F' L U' R'",10,9.1671
+337,10,"U' B U' R L D' F' L' D' R","R' D L F D R' L' U B' U",10,0.6411
+338,10,"B U' D U F' D B' L' B D","D' B' L B D' F D' B'",8,0.2938
+339,10,"L B' R' L F' D U' R L' U","U' L R' U D' F R L' B L'",10,0.7061
+340,10,"B' D' R' D' F' L' D F D' U'","U D F' D' L F D R D B",10,0.0642
+341,10,"U F' D' L B D U' F U R","R' U' F' U D' B' L' D F U'",10,4.1762
+342,10,"D F B' L B' L' B' D U' R'","R U D' B L B L' F' B D'",10,2.9350
+343,10,"L' U' R' L D L' B' L B R'","R B' L' B L D' R L' U L",10,0.7140
+344,10,"F' R U' B' U B R' U' R' U","U' R U R B' U' B U R' F",10,3.3892
+345,10,"U' D L' B' R F L R B' L","L' B L' R' F' R' B L U D'",10,1.9994
+346,10,"L' B U' B' D U' L' R' D F'","F D' L R U D' B U B' L",10,0.6289
+347,10,"F D' B D' U R' B' U B' U'","U B U' B R U' D B' D F'",10,2.3398
+348,10,"D B U B D B' F' R L' U'","U L R' F B D' B' U' B' D'",10,1.4000
+349,10,"R' B' R' U' R B' U R L D","D' L' R' U' B R' U R B R",10,1.6638
+350,10,"B F U' F U' L B' F' B' R","R' F B2 L' U F' U F' B'",9,0.2278
+351,10,"R' U L' F L' R' F' U' F' U","U' F U F L2 R L' F' L U' R",11,2.4336
+352,10,"L' F L F L D' L' F' B R'","R F B' L D L' F' L' F' L",10,10.1150
+353,10,"B' R' L' B' D F U' B' D U'","U D' B U F' D' B R L B",10,0.2182
+354,10,"R L' D U' R U D U' R F","F' R' D' R' U D' R' L",8,0.2175
+355,10,"D' B R U' D R L R B' F","F' B L' R2 U D' R' B' D",9,2.3537
+356,10,"L' R' L' U D' R D' U' R' U'","U R U D R' U' D R L2",9,0.1811
+357,10,"F D' F' R B' F' U' F D U'","U D' F' U F B R' F D F'",10,1.8534
+358,10,"F' R' U' R D' B' U L' D' L'","L D L U' B D R' U R F",10,0.1282
+359,10,"L B' L F B' U F U F D'","D F' U' F' U' F' B L' B L'",10,2.2177
+360,10,"R D U D' B' L D R L' R'","L D' L' B U' R'",6,0.0124
+361,10,"D B L' B L' D R D U' L","L' U D' R' D' L B' L B' D'",10,0.0773
+362,10,"L R' B L F' B' R' D F U","U' F' D' R F B L' B' R L'",10,0.2484
+363,10,"U R L R' D' U' R' U D' R'","R U' D R U D L' U'",8,0.3220
+364,10,"D B' L F D' U' B' D' R B","B' R' D B U D F' L' B D'",10,0.9223
+365,10,"B U L U L D' L R' B U","U' B' L' R D L' U' L' U' B'",10,4.7182
+366,10,"U B D L' R B R B' F U'","U F' B R' B' R' L D' B' U'",10,0.5069
+367,10,"R U L' B R' F B' D L F","F' L' D' F' B R B' L U' R'",10,13.4267
+368,10,"R' D B F B U R' L R L'","U' F' B2 D' R",5,0.0069
+369,10,"B' U R' D' B' U' B' U' D B","B' U D' B U B D R U' B",10,4.6630
+370,10,"U R' U R F' D' U' D U D'","D F R' U' R U'",6,0.0157
+371,10,"F R' U F B F L' U D' U","U2 D L F2 B' U' R F'",8,0.0583
+372,10,"B' U' L B' F' L B R D U","U' D' R' B' L' F B L' U B",10,0.4302
+373,10,"L B L R U B' R B' L' U","U' L B R' B U' R' L' B' L'",10,0.1095
+374,10,"D B' D U L U' B D' L' D","D' L D B' U L' U' D' B D'",10,0.9625
+375,10,"B' L D U L F' D L D L'","L D' L' D' F L' U' D' L' B",10,0.4255
+376,10,"F' D' L' F' B U' B' L R' L'","R B U F B' L D F",8,0.0182
+377,10,"U F' R U F U B D' U' D'","U D2 B' U' F' U' R' F U'",9,0.1657
+378,10,"D L' R D L R L R' B' D","D' B L2 D' R' L D'",7,0.0537
+379,10,"L R B U L' B U' R U D'","U' D R' U B' L U' B' R' L'",10,0.1477
+380,10,"R D' B L B' R' D' R' B' F'","F B R D R B L' B' D R'",10,1.9530
+381,10,"B R L F' U' B R' L B U","U' B' L' R B' U F R' L' B'",10,0.0436
+382,10,"B L F B D R' F' R D' B'","B D R' F R D' F' B' L' B'",10,2.7082
+383,10,"U D B F L' F U' B' R' F","F' R B U F' L F' B' U' D'",10,0.2060
+384,10,"D' R' F' U B F L U' B' D'","D B U L' F' B' U' F R D",10,0.2806
+385,10,"F B' U R' B U F' R' L' D","D' L R F U' B' R U' F' B",10,2.0810
+386,10,"F' D F' U L' F U' D' B' D'","D B U D F' L U' F D' F",10,5.3661
+387,10,"B' R' D' B D R' D B U' B'","B U B' D' R D' B' D R B",10,0.2436
+388,10,"D F D' L R L D F R' B'","B R F' D' R R2 L2 D F' D'",10,0.0282
+389,10,"L' R' L' U B' U R L D F","F' D' L R' L2 U' B U' R L2",10,0.5431
+390,10,"U D R' B L' R U' D L' B'","B L U D' R' L B' R U' D'",10,1.6031
+391,10,"F D' U F' R F R' L' R' F","F' L D B R' B' R2 U' F'",9,1.6843
+392,10,"L D U' D' L F' U' R' U' F'","F U R U F L' U L'",8,0.0406
+393,10,"L U B' L F L R' D R' L","L' R D' R L' F' L' B U' L'",10,2.5342
+394,10,"B' L F L' B D' F L' F' B","F B' L F' D B' L F' L' B",10,4.4314
+395,10,"F U' L U F R' L B L B","B' L' B' L' R F' U' L' U F'",10,1.4991
+396,10,"L' R F' L' F L' B U D' L","L' U' D B' L F' L F R' L",10,0.6410
+397,10,"D U' D U' F L' B L R D'","D L' R' F' B F B2 L F' U2 D2",11,5.6881
+398,10,"L' D F R U' D' F L U' F'","F U L' F' U D R' F' D' L",10,1.4078
+399,10,"L' F R L U B D B R' L'","L R B' D' B' U' R' L' F' L",10,0.1601
+400,10,"L F' B F' R D' F' B R' L'","L R F B' D R' F2 B' L'",9,0.1057
+401,11,"L' U' B L B' D' U' D' L' B' F","F' B L U D2 B L' B' U L",10,1.5516
+402,11,"F D' U' F' B' L B R' D L' F","F' L D' R B' L' F B U D F'",11,0.7708
+403,11,"L' D B' U' L' R U L B L F'","F L' B' L' U' R' L U B D' L",11,9.0517
+404,11,"U' F' B' R' D R F U R' F' R","R' F R U' F' R' D' R F B U",11,10.1319
+405,11,"R' D F' U L B' L B' F U' B","B' U F' B L' B L' U' F D' R",11,134.6593
+406,11,"B D' R' D U' L U' F B R' F","F' R F' B' U L' U D' R D B'",11,2.6707
+407,11,"R L B' D U' R' U' L' D' B' D","D' B D L U R U D' B R' L'",11,10.0797
+408,11,"R L R L' U D' B F' U' B L'","L B' U F B' U' D R2",8,0.3377
+409,11,"R D L' R' B' U' B' L' F' L' U","U' L F L B U B R L D' R'",11,1.7574
+410,11,"L U F U B D U L D U B'","B U' D' L' U' D' B' U' F' U' L'",11,1.1043
+411,11,"L' U' F' B L R L' U L' F R'","R F' L U' R' F B' U L",9,0.1692
+412,11,"L' R' F U D' B' R B U' R' U'","U R U B' R' B U' D F' R L",11,6.9150
+413,11,"L' B R B L D' B' R' D' U' F'","F U D R B D L' B' R' B' L",11,5.8388
+414,11,"B' F U' F' B' U' F U B' U' D'","U D B U' F' U F B U F' B",11,11.6631
+415,11,"L U R' B R' D R L' R' L D","D2 R B' R U' L'",6,0.0061
+416,11,"B' R B' F' B' F L' F' U' D' R","R' U D F L B2 R' B",8,0.0508
+417,11,"U' R D' L' D F' R' U' R' L' D","D' L R U R F D' L D R' U",11,1.8112
+418,11,"F' L U' D' B' L' B' R B' L F","F' L' B R' B L B U D L' F",11,1.0793
+419,11,"L' R' U' L' F' D U' R' F' L' B","B' L F R U D' F L U R L",11,3.6780
+420,11,"D' R' L U R U' F' L' B L' D'","D L B' L F U R' U' R L' D",11,4.5070
+421,11,"B' D' U' L' R' B' U' B' U' R B'","B R' U B U B R L U D B",11,1.6978
+422,11,"U' F R B D' F R' F U' R' B'","B R U F' R F' D B' R' F' U",11,1.1544
+423,11,"R' L B' R B F R U B' F' R","R' B L' F R' F' B' R' U' B R",11,7.4790
+424,11,"D' L' B D B' F' B U L R' L","L2 R U' F D' B' L D",8,0.1056
+425,11,"U' F B' F R F D' L' B' D' U","U' D B L D F' R' F2 B U",10,1.3760
+426,11,"B F R B' U L U R B' F B","F' R' U' L' U' B R' F' B'",9,0.0638
+427,11,"U' D U' F' R F' D' B' D L F","F' L' D' B D F R' F U2 D'",10,0.5709
+428,11,"D' F D' F D' L' D U R F' U","U' F R' U' D' L D F' D F' D",11,0.2925
+429,11,"U' L' R' F' B' D B' F' L' B D","D' B' L F B D' F B R L U",11,1.1357
+430,11,"R F U' F' L' F R L F' U B'","B U' F L' R' F' L F U F' R'",11,4.3601
+431,11,"F L R U D U' B R' L' B R'","R B' L R B' D' R' L' F'",9,0.4585
+432,11,"L' D L' F' R' U F' D U' F D'","D F' U D' F U' R F L D' L",11,73.8151
+433,11,"B' D F' D' F' U D L' D L U","U' L' D' L U' D' F D F D' B",11,9.4663
+434,11,"F R' D' F' B' R' D' L' U F' B'","F B U' L D R F B D R F'",11,3.0474
+435,11,"D' B' R U' F' L' U B R D U'","U D' R' B' U' L F U R' B D",11,0.8598
+436,11,"B' L R' B L R' D' B L' F' D'","D F L B' D R L' B' R L' B",11,53.3548
+437,11,"U' R U F D U F B' D' F B","F' B' D F' B U' D' F' U' R' U",11,1.9921
+438,11,"U' D' F' L' R' F' L' D' B' F' R'","R F B D L F R L F U D",11,11.4809
+439,11,"U' L' D L U' B F U L' B F'","F B' L U' F' B' U L' D' L U",11,1.4471
+440,11,"F D L B' R' U F R' U' R L","L' R' U R F' U' R B L' D' F'",11,5.1488
+441,11,"U D R U B' L' F' L' F U' B'","B U F' L F L B U' R' U' D'",11,3.2244
+442,11,"D' L' U' B U' L' R' L' D' L D","D' L' D R L2 U B' U L D",10,0.0815
+443,11,"U' B D' B U' D' F B R L' R'","L F' B' U D B' D B' U",9,0.0932
+444,11,"F' B' L F D L R' L D U' F'","F U D' R L2 D' F' L' F B",10,1.6750
+445,11,"F D L' F R F B D' F D B'","B D' F' D F' B' R' F' L D' F'",11,14.8855
+446,11,"D L B' L F D' L U' F U' D'","U D F' U L' D F' L' B L' D'",11,0.6121
+447,11,"U' F' L' R' D' L D R B F' D'","D F B' R' D' L' D R L F U",11,32.4263
+448,11,"L' B L' U' R' L' B' D R F L'","L F' R' D' B R L U L B' L",11,6.0344
+449,11,"B' R D' R B R' L D' R' U' F'","F U R D R L' B' R' D R' B",11,1.1041
+450,11,"F' B R U' D B U D' U D R","R' U2 B' U D' R' F B'",8,0.0783
+451,11,"L' R' L R' L' R B' F L' F' R","R' F L F' B R L",7,0.3695
+452,11,"F L F' B D R U' D' B' L U","U' L' B U D R' D' F B' L' F'",11,5.3492
+453,11,"B' U R' D F' D' U L U' F U","U' F' U L' U' D F D' R U' B",11,13.2452
+454,11,"L D' B R' D' F' L' D L D L","L' D' L' D' L F D R B' D L'",11,0.0844
+455,11,"F L U' R F D B L' B U B","B' U' B' L B' D' F' R' U L' F'",11,2.5430
+456,11,"U' D U' B U D' U R F' U' F","F' U F R' U2 D B' U2 D'",9,0.8407
+457,11,"U R U F D L' R F' B R U'","U R' F B' R' L D' F' U' R' U'",11,2.4500
+458,11,"B' F D B' D' L' U' D' B R' D'","D R B' U D L D B D' F' B",11,4.9160
+459,11,"L' B D' U D F' D U' B L R'","L' R B' U D' F U' B' L",9,0.2786
+460,11,"D' L' D' B' F' U' F U' B' F' L'","L F B U F' U F B D L D",11,8.6656
+461,11,"D' L' U D' F' U' D' U' L' D B","B' D' L D U2 F U' D L D",10,0.4676
+462,11,"R' L' U B U R B' R F L' R","L R' F' R' B R' U' B' U' R L",11,7.9988
+463,11,"F' L U' F L' F U L' R' F' B'","F B L R U' F' L F' U L' F",11,1.5263
+464,11,"F' B F R F' L' R' B R' L D","D' L' R B' R L F R' B'",9,0.7293
+465,11,"R' D R' U L' D F L U' F B'","F' B U L' F' D' L U' R D' R",11,1.3853
+466,11,"U B' F' R' B U' D L R L R'","L2 U D' B' R F B U'",8,0.0626
+467,11,"U' F B' L F R U D B' L' D'","D L B U' D' R' F' L' F' B U",11,6.8516
+468,11,"R' B' D U' R U B L D L' F","F' L D' L' B' U' R' U D' B R",11,11.4880
+469,11,"R F' B' U' L U R' B D U' D","U D2 B' R U' L' U F B R'",10,6.8933
+470,11,"R' B F' U B' L D L' R' B' L","L' B L R D' L' B U' F B' R",11,13.5878
+471,11,"L F' L' F' R F U R' D' F' L","L' F D R U' F' R' F L F L'",11,11.4799
+472,11,"D L R U D' L B L' F' B L","L' F B' L B' L' U' D R' L' D'",11,1.8477
+473,11,"R F B F' B' U' L D' F' B' D","D' F B D L' U R'",7,0.0230
+474,11,"B D' B R F' U' F' R' U R' U","U' R U' R F U F R' B' D B'",11,0.7272
+475,11,"F L D' L' F' R' F B F L F","F' L' F2 B' R F L D L' F'",10,6.1921
+476,11,"R U B U D L U L' U L' D","D' L U' L U' L' U' D' B' U' R'",11,74.1889
+477,11,"R' L U' R' F' B D U' D F R","R' F' U D2 F B' R U R L'",10,2.6092
+478,11,"U D F' B R' U B D L' F' B","F B' L D' B' U' R F B' U' D'",11,13.7137
+479,11,"U F L' U' R F L' B L D' U","U' D L' B' L F' R' U L F' U'",11,6.0890
+480,11,"F' D' F' L' U R F L U B' L","L' B U' L' F' R' U' L F D F",11,5.1329
+481,11,"D B F D R' L D U' D F B","F' B' U D2 R L' D' F' B' D'",10,0.4441
+482,11,"R' F' L' B R' B' D R D B L","L' B' D' R' D' B R B' L F R",11,6.6992
+483,11,"D B' R U' R L U L' B F D","D' F' B' L U' R' U U' L' U R' B D'",13,9.8590
+484,11,"R U' D B' L D R U' F U' B'","B U F' U R' D' L' B U D' R'",11,0.8961
+485,11,"U L U' D' U B D R B' D' L","L' D B R' D' B' D L' U'",9,0.4879
+486,11,"L U B U' B' F' B' L U' B' U","U' B U L' F B2 U B' U' L'",10,0.1354
+487,11,"B' R L' R' B D B' D R B R'","R B' R' D' B D' B' L B",9,0.3197
+488,11,"L' F L F' D U' R B L' B R'","R B' L B' R' U D' F L' F' L",11,10.2131
+489,11,"D B L D U L B' F B' F D","D' F2 B2 L' U' D' L' B' D'",9,0.3725
+490,11,"L' D F' U' B U' R F U L U","U' L' U' F' R' U B' U F D' L",11,10.6666
+491,11,"F U F' B F' B' R' L' R B U","U' B' L F2 U' F'",6,0.0081
+492,11,"D' R' D' U' B' L' D L B' R' U","U' R B L' D' L B U D R D",11,3.1513
+493,11,"R' B' R F' U D U' B L D F","F' D' L' B' D' F R' B R",9,0.2060
+494,11,"F U B' D' R' D' B' U' D' U' D'","U2 D2 B D R D B U' F'",9,0.1239
+495,11,"R L R D U D' L' F' D R U","U' R' D' F L U' R2 L'",8,0.1370
+496,11,"U' D F B' D R U D' F' L' U","U' L F U' D R' D' F' B U D'",11,70.9531
+497,11,"L B U B' F D R F D R D'","D R' D' F' R' D' F' B U' B' L'",11,21.9086
+498,11,"U R F B' F' D U R' L' F' L","L' F L R U' D' B R' U'",9,6.0221
+499,11,"B F' R B' F B F U' D L' R","L R' U D' F2 R' F B'",8,0.0468
+500,11,"R L' B F U D B' R D' L R'","L' R D R' B U' D' F' B' R' L",11,2.5920
+501,12,"U R F' D' B' F L' D' U' B L D'","D L' B' U D L F' B D F R' U'",12,3.1557
+502,12,"R U D' U' B' L D F' L R' L' D'","D R F D' L' B D R'",8,0.0570
+503,12,"D' U' L F R' U' F B' U B R F","F' R' B' U' F' B U R F' L' U D",12,44.4996
+504,12,"L D U' L' R B U' B' D R' L' B","B' L R D' B U B' R' L U D' L'",12,41.7149
+505,12,"B L F' D L' B L' U L' B F' B'","F L U' L B' L D' F L' B'",10,0.0968
+506,12,"U L' D U F' B U' F B' F' U' B","B' U B U F B' U' D' L U'",10,0.9542
+507,12,"L' R' L U' L' D L F' R' B F' L'","L F B' R F L' D' L U R",10,0.2157
+508,12,"U' L B U' D' F B R' B' D' B' D'","D B D B R F' B' U D B' L' U",12,3.0541
+509,12,"R B F B' D L U R' U F' B' R'","R F B U' R U' L' D' F' R'",10,0.8960
+510,12,"U' R' B R' L' D F U' B F D L","L' D' F' B' U F' D' R L B' R U",12,138.6189
+511,12,"D U' B' L' D B R L U' F' U F'","F U' F U L' R' B' D' L B U D'",12,69.7216
+512,12,"R F' R' D' U' D' B' U' R D' R' D","D' R D R' U B U D2 R F R'",11,2.5631
+513,12,"D F B' D' L' D' R F' R F L' D","D' L F' R' F R' D L D F' B D'",12,5.5213
+514,12,"L' U R' F' B U' D R D L D B'","B D' L' D' R' U D' F B' R U' L",12,5.4228
+515,12,"R D R F' U L' D U' D L' D L'","L D' L U D2 L U' F R' D' R'",11,14.6302
+516,12,"U D' R D' R L' F' L' U' L U' F","F' U L' U L F R' L D R' U' D",12,5.7472
+517,12,"L' U R' F' L' R' D L D' U F' D'","D F U' D L' D' R L F R U' L",12,7.9824
+518,12,"R' D U' D' L' R' U B F R' F' L","L' F R F' B' U' R L U R",10,0.2952
+519,12,"R L R U F B D' F D R F R'","R F' R' D' F' D F' B' U' R2 L'",11,0.0432
+520,12,"B L' D' U D U L U' B L B' R","R' B L' B' U L' U2 L B'",9,0.2612
+521,12,"B' F' B U' L D L' F' U' L' F' D","D' F L U F L D' L' U F",10,0.1821
+522,12,"U R' D L' F D' L' R' D R' F R","R' F' R D' L R D F' L D' R U'",12,10.1171
+523,12,"L' R U' R' D' B' L' B' F' R' L B","B' L' R F B L B D R U R' L",12,123.3880
+524,12,"U B' L' R L D R' B' L' D B F'","F B' D' L B R D' R' B U'",10,2.6846
+525,12,"R D F' R' U' D' U' F' B' D L' F'","F L D' F B U2 D R F D' R'",11,0.4137
+526,12,"D' F' R F' U B' D U D F B F","F2 B' U' D2 B U' F R' F D",10,3.8400
+527,12,"U' F' U' D' R B R' D' F R' F R","R' F' R F' D R B' R' U D F U",12,2.6769
+528,12,"U' B' D R L F' U' D' F R B' F","F' B R' F' U D F R' L' D' B U",12,14.3068
+529,12,"U L R U' D' R F' B U F' L' R'","L R F U' F B' R' U D R' L' U'",12,7.3398
+530,12,"F L U' D' L D R B R' L' F' R","R' F L R B' R' D' L' U D L' F'",12,105.7445
+531,12,"F' B R' U' B L' B' R L R F R","R' F' L' R2 B L B' U R F B'",11,4.6816
+532,12,"F' U' F L' F' B' R' B' D L R L'","R' D' B R F B L F' U F",10,4.0274
+533,12,"R F' R' U B R U' F' L D' R U","U' R' D L' F U R' B' U' R F R'",12,2.8386
+534,12,"U' L F L U R L U F' L U R","R' U' L' F U' R' L' U' L' F' L' U",12,12.0755
+535,12,"L' B F' U' D' F D F' D R' F L'","L F' R D' F D' F' U D F B' L",12,14.2229
+536,12,"L' R' F D' L B' L' F' D R' F' R","R' F R D' F L B L' D F' R L",12,9.1485
+537,12,"B R' B L' B D' R B' R F L' F","F' L F' R' B R' D B' L B' R B'",12,15.2814
+538,12,"L' R L' R F U R L D' F D' L'","L D F' D R' U U' L' U' F' R2 L2",12,16.3627
+539,12,"R U' L' F D' F U' D B L U' R","R' U L' B' U D' F' D F' L U R'",12,129.2286
+540,12,"D' B' L' R' U' R' F' L B L' U D","U' D' L B' L' F R U R L B D",12,2.9774
+541,12,"B D' R' F' U D' U' L D F' B' F'","F2 B D' L' D F R D B'",9,0.9358
+542,12,"U' D' F' R L R B L D U' F L'","L F' U D' L' B' R2 L' F U D",11,1.0282
+543,12,"R U' R F R B' R' B F R' F L","L' F' R F' B' R B R' F' R' U R'",12,19.9174
+544,12,"D L' R B' L' B' D R L' F' R' B","B' R F L R' D' B L B R' L D'",12,158.9814
+545,12,"L' U' L R' D F' U' F L U B U","U' B' U' L' F' U F D' R L' U L",12,8.1162
+546,12,"F' L' D U' D R F' R B' R F D'","D F' R' B R' F R' U D2 L F",11,8.3655
+547,12,"L U' D R L B U F L B' U' F'","F U B L' F' U' B' R' L' U D' L'",12,14.5567
+548,12,"F L' F' D B R' L R F B' U' D","U D' F' B L' B' D' F L F'",10,2.4418
+549,12,"B L' D B L U' B F' B' L' D U","U' D' L F U L' B' D' L B'",10,2.0368
+550,12,"B' D' U' R D' R F' B U F B' U","U' F' B U' F B' R' D R' U D B",12,69.4110
+551,12,"U' R' D' U B D' U' B' R' U L' D","D' L U' R B U D B' U' D R U",12,10.7666
+552,12,"L F' U' D' R' D' F' B' D R' L' U'","U L R D' F B D R U D F L'",12,0.9516
+553,12,"R' F' D' F U' F' U L' F U' B U","U' B' U F' L U' F U F' D F R",12,10.4755
+554,12,"B R B' D R' B' L' D F U L' D'","D L U' F' D' L B R D' B R' B'",12,43.3562
+555,12,"U' L' F' D B' L' B F R' F' D F","F' D' F R F' B' L B D' F L U",12,278.0225
+556,12,"U' B' R' U' B' U F R' F' R B R","R' B' R' F R F' U' B U R B U",12,58.5233
+557,12,"R L B U D F' D' R' F' L' R U'","U L R' F R D F U' D' B' R' L'",12,6.4461
+558,12,"B' D R' L U D L R U F' L' F","F' L F U' L' R' U' D' R L' D' B",12,4.2811
+559,12,"U' R' U' R F' D' B L' U' D F R'","R F' U D' L B' D F R' U R U",12,13.4757
+560,12,"D U' L' R' B D' F' L' R U L' F","F' L U' L R' F D B' R L U D'",12,87.5911
+561,12,"U R B' L' R' B' L' B' L' R F' L","L' F L R' B L B R L B R' U'",12,20.3751
+562,12,"R' U R F D F R' B' D U L B'","B L' U' D' B R F' D' F' R' U' R",12,31.9993
+563,12,"D B' R' D' R L' D U' L R' L F'","F L2 R U D' R' L D R B D'",11,1.4930
+564,12,"U F' R' D' F' L' R B D' F' R B","B' R' F D B' R' L F D R F U'",12,0.6138
+565,12,"D' U' D' R L' B' R U D' B' R U","U' R' B U' D R' B R' L U D2",11,4.7663
+566,12,"R F' B D' U' R U' L' F' U' D' R'","R U D F L U R' U D F B' R'",12,4.9921
+567,12,"B' U' L' D R' B' L R' L U' D' B","B' U D L2 R B R D' L U B",11,0.9944
+568,12,"D B' L' R' L R' U R' L' F D F'","F D' F' R L U' R2 B D'",9,0.0540
+569,12,"F L D' F' U B F D B U L' B'","B L U' B' D' F' B' U' F D L' F'",12,12.4348
+570,12,"R F' D F R U F R' D B D' R'","R D B' D' R F' U' R' F' D' F R'",12,32.8892
+571,12,"B L' R' B L' D F B L' U' L' B'","B L U L F' B' D' L B' R L B'",12,4.9495
+572,12,"U L F' L B' R U' R' B F D' U","U' D F' B' R U R' B L' F L' U'",12,24.9198
+573,12,"L' U' B' F' U' F' D' F' R' U' L' U'","U L U R F D F U F B U L",12,8.1612
+574,12,"R B' U B' U L R L' B' R' F' B","F U' B L U' L' B R'",8,0.0509
+575,12,"L F' L F' D F D' F R' D' L' R","L R' D R F' D F' D' F L' F L'",12,47.2053
+576,12,"U' D U' B U' F' R' U' B F' D R'","R D' F B' U R F U B' U2 D'",11,26.5624
+577,12,"F D' U D B' U' D F' L U' D' R","R' U D L' F U D' B U' F'",10,0.5026
+578,12,"B D' U F B R' F' B F B F R'","R F' B2 R F' B' U' D B'",9,0.4141
+579,12,"F' L B' D' F' L R' F' B' U R D","D' R' U' F B R L' F D B L' F",12,3.7275
+580,12,"U' B L' R L' R B D U' B R' U","U' R B' U D' B' R2 L2 B' U",10,12.0932
+581,12,"F' L' R D U D' F' R F R F' L'","L F R' F' R' F U' R' L F",10,6.5754
+582,12,"R' L U' B F' D' F' U L R D R","R' D' L' R' U' F D F B' U R L'",12,11.3976
+583,12,"F' B F' R F R L R L' U B L","L' B' U' R2 F' R' F2 B'",8,0.0537
+584,12,"D' B D F' B F' L U L D U' D'","U L' U' L' F2 B' D' B' D",9,0.0881
+585,12,"U F U' R' F' R B' R U D R D'","D R' U' D' R' B R' F R U F' U'",12,33.9018
+586,12,"F L R' B L' U F D' R F U' D'","U D F' R' D F' U' L B' R L' F'",12,24.2311
+587,12,"R' F' L' D U' F B L' U' B' U B","B' U' B U L F' B' U D' L F R",12,38.9035
+588,12,"B F L' D R' U' R U D U' R' D","D' R D' R' U R D' L F' B'",10,0.6700
+589,12,"F U' F L' B F U L F R D B'","B D' R' F' L' U' F' B' L F' U F'",12,6.9302
+590,12,"R' L U' L D' B D' L' B R U R'","R U' R' B' L D B' D L' U R L'",12,206.0654
+591,12,"U' F' R' F L D U' D R' U' R' B'","B R U R U D2 L' F' R F U",11,14.6417
+592,12,"U' R U D F' B R B L' B F B'","F' L B' R' F B' U' D' R' U",10,0.2588
+593,12,"L' D' F U' B' L D B L U D' B'","B U' D L' B' D' L' B U F' D L",12,48.2566
+594,12,"F' U R U D U' B F R' U' D L'","L U D' R F' B' D' R' U' F",10,0.7818
+595,12,"F' R B' U F L' U' F U' B' L' U'","U L B U F' U L F' U' B R' F",12,3.8003
+596,12,"F' L' U D R' F B' F' R' L B' U","U' B L' R B R U' D' L F",10,2.7347
+597,12,"U' R B R F L' R L' F D U R'","R U' D' F' L2 R' F' R' B' R' U",11,41.5648
+598,12,"U D' F' R' D B' D' F L' B F' U'","U F B' L F' D B D' R F U' D",12,39.3473
+599,12,"R' U B L' F B L B' U' D B' D'","D B U D' B L' F' B' L B' U' R",12,5.2855
+600,12,"F' L' U' R' D R L F' D' F R D'","D R' F' D F R' L' D' R U L F",12,2.9580
+601,13,"B' L' F D' B L R' D R F D L R'","L' R D' F' R' D' R L' B' D F' L B",13,45.0619
+602,13,"B' D U' R D' L' U B R' F D' F L","L' F' D F' R B' U' L D R' U D' B",13,69.2073
+603,13,"B' L B' U D F B F D L' D B' D","D' B D' L D' F2 B' U' D' B L' B",12,4315.0658
+604,13,"D R U D' U' F U' R U' F L' D L","L' D' L F' U R' U F' D R' D'",11,0.3213
+605,13,"B' U' L F' R L D' F B' L F D' B","B' D F' L' F' B D R' U U' L' F L' U B",15,4329.2426
+606,13,"F' R D U' R D F' U' B L' R D' L'","L D L R' B' U F D' R' U D' R' F",13,127.9508
+607,13,"F R' F B L F R U F U L D' F'","F D L' U' F' U' R' F' L' F' B' R F'",13,38.0305
+608,13,"R' D' U' B D' R' D U R D' R B' D","D' B R' D R' U' D' R D B' U D R",13,26.5081
+609,13,"U' B R F R F D L' U B D B' L'","L B D' B' U' L D' F' R' F' R' B' U",13,900.9274
+610,13,"F R' U' D U' B R' F' L U' R U' F'","F U R' U L' F R B' U2 D' R F'",12,10.6863
+611,13,"F U' L' B' L' B U' L' B' R' B' R B","L U L U' B' R' B R B L U2 F'",12,7.5500
+612,13,"L' U F' R' F' B R D L D R U D","U' D' R' D' L' D' R' F B' R F U' L",13,87.3788
+613,13,"U F' U F' D' L' F' L R' F' L R' L","L2 R F L' R F L D F U' F U'",12,35.7794
+614,13,"L' R U B' F' B D L D' U' R' U L","L' U' R U D L' D' F U' R' L",11,1.8777
+615,13,"U' F' U F' B U F' D F' B U L D","D' L' U' F B' D' F U' F B' U' F U",13,39.5057
+616,13,"D' L F U L' B' D B L F' L' B R","R' B' L F L' B' D' B L U' F' L' D",13,115.1072
+617,13,"L R' U' R' B D' U' R F B F' D' U'","U D B' R' U D B' R U R L'",11,0.4909
+618,13,"R D' U' R' L' U' F' D L' F' L' F D'","D F' L F L D' F U R L U D R'",13,762.3238
+619,13,"R F' L' U' B' F' L D B' R B' D' R'","R D B R' B D' L' F B U L F R'",13,9.2988
+620,13,"U' B U R' L R B' D' F' L' B L' F'","F L B' L F D B L' U' B' U",11,0.7781
+621,13,"U F R' U' D R' D' R' L D B' U B'","B U' B D' L' R D R U D' R F' U'",13,143.3811
+622,13,"L' F' B' F B F' D' F' R F' B' L' U","U' L F B R' F D F L",9,0.0393
+623,13,"U' F' D B D' U' B F' R F B R B","B' R' F' B' R' F B' U D B' D' F U",13,148.4072
+624,13,"B' F B' U L U' R' B D' L B U L'","L U' B' L' D B' R U L' U' F' B2",12,193.3619
+625,13,"B' F' D' U' F' B' D B F B F B' L","L' F2 B' D' F B U D F B",10,1.3118
+626,13,"B' D' U D' L' F' U B' U' D' F' D B","B' D' F U D B U' F L U' D2 B",12,12.3913
+627,13,"F' L' R' L' U D L' D' L R D' U L","L' U' D L' R' D L U' D' R L2 F",12,98.5684
+628,13,"D R' B D' U' D R' L' F R D' B D'","D B' D R' F' R L U B' R D'",11,0.1071
+629,13,"D' U R L' F B U B' F' D' L' B' U","U' B L D R' L U D F' U2",10,0.2070
+630,13,"F' U' B U' F B' L' B D U B' D' L'","L D B U' D' B' L F' B U B' U F",13,295.6183
+631,13,"D F U D' L D L' D F R' F B L'","L F' B' R F' D' L D' L' U' D F' D'",13,32.5955
+632,13,"F B' D' R B' F' D L D U F U' R","R' U F' U' D' L' D' F B R' D F' B",13,5241.3102
+633,13,"D' U' R L' U F D R' D' F' D' L R","L' R' D F D R D' F' U' R' L U D",13,201.8048
+634,13,"D B F B U L' B F U F U' L' U'","U L U F' U' F' B' L U' F' B2 D'",12,3934.0422
+635,13,"R B U' R U F D' F' R D' L' D' R'","R D L D R' F D F' U' R' U B' R'",13,112.6424
+636,13,"D R D' L' R' D B' U R' D U F L","L' F' U' D' R U' B D' R L D R' D'",13,23.0621
+637,13,"L' B R B' F' D U' F D' B' R' B' F","F' B R B D F' U D' F B R' B' L",13,72.3967
+638,13,"R D F B U' F R L U R' F' U B'","B U L' U' L F U2 L' F' U F' B' D' R'",14,1719.5377
+639,13,"L' F' L F R B' L U' R B R' U' D","U D' R B' R' U L' B R' F' L' F L",13,68.2100
+640,13,"F' D' B' D' U' D' R' L B' F D' U D","U' F' B R L' U D2 B D F",10,3.7474
+641,13,"D' B' U' R L' D' R' L R' B' F D' L'","L D F' B L' R2 D R' L U B D",12,21.0549
+642,13,"F U F R' F D' F B' D' B R' U' D'","U D R B' D F' B D F' R F' U' F'",13,98.8573
+643,13,"F' D' B' F D' B' L R' D' U R' F' R","R' F R U' D L' R B D F' B D F",13,486.1735
+644,13,"U D F' L' D' B R' D F B U' R' D","D' R U F' B' D' R B' D L F U' D'",13,63.6880
+645,13,"L' B F B D R U' L U' L U' B' F","F' B U L' U L' U R' D' F' B2 L",12,148.5216
+646,13,"L F U' R D' L B' D' R L D' F L'","L F' D L' R' D B L' D R' U F' L'",13,3277.8839
+647,13,"D' L' D R' F B D L U' R' L' B F'","F B' L R U L' D' F' B' R D' L D",13,226.0234
+648,13,"R L' B R U' R B' D' F R L' U' L'","L U L R' F' D B R' U R' B' R' L",13,136.6190
+649,13,"U' B' U' L B' U' R L D U D U F","F' U2 D2 L' R' U B L' U B U",11,3.5171
+650,13,"R' L F' U' B' F' B' U' L D U' D R","R' U D2 L' U F B2 U F R L'",11,21.4948
+651,13,"L' U B R U R D' B' U' L D' F D","D' F' D L' U B D R' U' R' B' U' L",13,66.9627
+652,13,"F' D' R' U' R L D' F L F' B R' F'","F R F B' L' F' D R' L' U R D F",13,62.6049
+653,13,"L' D' L B' F R U' B' L' F' R U' D'","U D R' F L B U R' F' B L' D L",13,53.7217
+654,13,"B' U' D' R U' F R' L' F' D' U' D F'","F U F L R F' U R' U D B",11,3.6750
+655,13,"F' R U' R' D' U' F' B F U' L R' D","D' L' R U B' U D R U R' F",11,1.5993
+656,13,"D U' D U D L' R U R U B' R' U'","U R B U' R' U' R' L D",9,1.3893
+657,13,"L D L B R L' B' U' R D' F L' F'","F L F' D R' U B R' L B' L' D' L'",13,5.6300
+658,13,"D R B U' F L R' D' L R L R' D'","D L2 D L' R F' U B' R' D'",10,8.7737
+659,13,"L' B' D' B' F' L' U' B F' B' D' F' R","R2 F' R U F D F L F2 B D B L",13,70.2870
+660,13,"U' R' D R' U' R' L' F' B' D R' B U","U' B' R D' F B R L U R D' R U",13,18.7761
+661,13,"L' F D' B U F U' B F U R D' F'","F D R' U' F' B' U F' U' B' D F' L",13,106.1229
+662,13,"F L' F L F B R' U F B' R U' B","B' U R' F' B U' R F' B' L' F' L F'",13,38.4742
+663,13,"R' F' U' R L B F' D R' F D F' B","F B' D' F' R D' F B' R' L' U F R",13,108.2200
+664,13,"D' F U' F' R D L F' L' R' U' L U","U' L' U L R F L' D' R' F U F' D",13,5.2751
+665,13,"B D L U L B R' D R' L F' D U","U' D' F L' R D' R B' L' U' L' D' B'",13,3648.6753
+666,13,"U D R L' B U L D U B F' L U","U' R' U' D F2 D' F' R L2 F B' D2",12,3.6261
+667,13,"R' U L' B R B' F R' D U D F' B","F B' U' D2 R F' B R' B' L U' R",12,19.2297
+668,13,"D' L D F' U F L R' B F' U' L' U'","U L U F B' L' R F' U' F D' L' D",13,33.1729
+669,13,"R' D' R' D' B L B' D U L U B D'","D B' U' L' U' D' B L' B' D R D R",13,84.0393
+670,13,"D' L' B F R D' R' D' B U F' L R","L' R' F U' B' D R D R' F' B' L D",13,113.9552
+671,13,"U' R' U' D R F' U B R B' D' L F'","F L' D B R' B' U' F R' U D' R U",13,1866.1098
+672,13,"F L R D' R' D' F B' L U' D U F","F' D' L' F' B D R D R' L' F'",11,22.7022
+673,13,"R' U' D' B D R U R' L U' D B U","U' B' U D' L' R U' R' D' B' U D R",13,341.7581
+674,13,"R D' L F' B' R' B L R' D R U D'","U' D R' D' L' R B' R F B L' D R'",13,10.6845
+675,13,"B U F' L' U' R U' D R' B F' D' R","R' D F B' R U D' R' U L F U' B'",13,14.8499
+676,13,"R D R' D B L B' U B D' U B U'","U B' U' D B' U' B L' B' D' R D' R'",13,119.5712
+677,13,"D R L U L F' R B L D U D F","F' U' D2 L' B' R' F L' U' R' L' D'",12,126.3890
+678,13,"R' U B R' L D U R F' D' B' L' F","F' L B D F R' U' D' R L' B' U' R",13,65.6900
+679,13,"L D' L F R F U' D L' R' U B D'","D B' U' L R U D' F' R' F' L' D L'",13,275.2375
+680,13,"U' R U F U L' R' F D' U' B U B'","B U' B' U D F' R L U' F' U' R' U",13,260.8852
+681,13,"R' B' F L R B D R L' U R B L'","L B' R' U' L R' D' B' R' L' F' B R",13,51.3549
+682,13,"U D' F U' D R' L' R B D F' B' R","R' F B D' B' L U D' F' U' D",11,17.4683
+683,13,"L' B' F' U' D' L' U F R U L U B'","B U' L' U' R' F' U' L U D F B L",13,38.7659
+684,13,"F U' L' R U D R' D' L B' D B' F","F' B D' B L' D R U' D' R' L U F'",13,509.8683
+685,13,"U' B U' F' B' R' L R F R D R' F'","F R D' R' F' L' F B U B' U",11,5.6426
+686,13,"R D L' R' D' R' F' B L R' U' R F'","F R' U L' R F B' R D R L D' R'",13,78.3241
+687,13,"R L' B L U R' D' L' F' R F' L' D'","D L F R' F L D R U' L' B' R' L",13,31.6708
+688,13,"L' U F L F' B' L B R F' L' B R'","R B' L F R' B' L' F B L' F' U' L",13,34.8213
+689,13,"L' F B F' R' U' B U' L F' L' U B'","U' L F L' U B U B2 R L",10,1.3689
+690,13,"L' U F' U R D' B' D B F' R' L U'","U L' R F B' D' B D R' U' F U' L",13,202.8478
+691,13,"F D L U' F D R' D' R L R D' R'","R D L' F' U' R U R2 U L' D' F'",12,23.3168
+692,13,"R L' B L' U D F' U' D' B' R L U'","U L' R' B U D F U' D' L B' R' L",13,87.7918
+693,13,"L D' U L' U' L D L' R F D' F L'","L F' D F' U L R' D R U' R' D' L'",13,192.4905
+694,13,"U D R U B' U R' L U L U' D R'","R U D' L' U' L' R U' B U' R' U' D'",13,141.3005
+695,13,"R D' L' B' U F U' F L F U D' F'","F U' D F' L' F' U F' U' B L D R'",13,15.5768
+696,13,"B U L U D F' B F B' L F R U'","U R' F' L' U' D' L' U' B'",9,0.2718
+697,13,"F' D' F' U B' D B' U L B F' R L'","L R' F B' L' U' B D' F B F' U' F D F",15,29840.4017
+698,13,"L R U' L D' L F R F L D' R F'","F R' D L' F' R' F' L' D L' U R' L'",13,10.2068
+699,13,"D U D' B R' L' B R' U F U' B U","U' B' U F' U' R B' R L B' U'",11,0.8261
+700,13,"U' L' U' D' B D L R' F' B L' R' D'","D L R F B' L' R D' B' U D L U",13,29.1624
+701,14,"U' R B' F' D L' R L' D L R' L U D","U' D' L2 R D' L2 R' D' F B R' U",12,35.8756
+702,14,"L' D' U' D' B' D' L F D F B' U L' F'","F L U' F' B D' F' L' D B U D2 L",13,21345.5070
+703,14,"B L' F' B D U' L U' L' B' R B' F D","D' F' B R' B L U L' U D' F B' L B'",14,403.7518
+704,14,"L D L F' L' D F B L B' D' B U L","L' U' B' D B L' F' B' D' L F L' D' L'",14,1093.7232
+705,14,"R' F R' B' L F' B D' L' D U D' F L'","L F' U' L D F B' L' B R F' R",12,23.7343
+706,14,"D' L D' F' B' U D' L R B R' L' R U","U' R' U' D F B L' D L' D",10,0.6758
+707,14,"R' U' D' U' R' D F' D R B U F' U' F'","F U F U' B' R' D' F D' R U2 D R",13,403.9483
+708,14,"U' D B F' D' B R L B F L R' U' R","R' U L' R F' B' L' R' B' D F B' U D'",14,3543.2011
+709,14,"B F' L' F R' U D F' B' D L R' D' U","U' D L' R D' F B U' D' R F' L F B'",14,2506.0934
+710,14,"D' L' D L U R F' L R L U F U B'","B U' F' U' L2 R' F R' U' L' D' L D",13,66.2993
+711,14,"U F' R U F' D' L D U R' U' R D L","L' D' R' U R U' D' L' D F U' R' F U'",14,686.7158
+712,14,"B' R' U B L D B' R' L R U D B F'","F B' U' D' L' B D' L' B' U' R B",12,2.8156
+713,14,"B L' B' U' B' L U' F B F' R' D U' F'","F U D' R B' U L' B U B L B'",12,21.0561
+714,14,"B R F R B' F' U D L B' R' F D R'","R D' F' R B L' U' D' F B R' F' R' B'",14,1560.3899
+715,14,"R' F D F L R' B L U' B' L F L' F","F' L F' L' B U L' B' R L' F' D' F' R",14,138.3491
+716,14,"R' B D F' B' L' B' U' B' R U' B' L' D","D' L B U R' B U B L F B D' B' R",14,1012.9595
+717,14,"R F D' U R' F D L F' R D' F' B U","U' F B' D R' F L' D' F' R U' D F' R'",14,400.0895
+718,14,"B U D' U' B D' B L D U D' L F D","D' F' L' U' L' B' D B' D B'",10,0.5585
+719,14,"D' F U B' U B F U B F' D' B' R' F","F' R B D F B' U' F B' F2 U' B U' F' D",15,5555.2283
+720,14,"U F' B R U' B' L R B L D B' U R'","R U' B D' L' B' L' R' B U R' F B' U'",14,159.9892
+721,14,"B' F' U L' U' R' D L' D U R U B R","R' B' U' R' U' D' L D' R U L U' F B",14,3068.7492
+722,14,"U B U' D R U R' F B' D F B' D' L","L' D F' B D' F' B R U' R' U D' B' U'",14,6313.2666
+723,14,"U' B L F U' F' D U D L' R B L' F'","F L B' L R' U' D2 F U F' L' B' U",13,359.9042
+724,14,"L U F R B' U D' L' R' D' L R D' B","B' D L' R' D L R U' D B R' F' U' L'",14,406.0271
+725,14,"L B L' D' U F' R U F R' F L R' U'","U L' R F' R F' U' R' F U' D L B' L'",14,1084.0179
+726,14,"R' B' L B' L' B F B' L' R B R B L","L' B' R' B' L R' F' L B L' B R",12,47.9223
+727,14,"R' D R F D F D L R' L B' R L D'","D L' R' B L2 R D' F' D' F' R' D' R",13,179.7624
+728,14,"F' D U L' B' D U' R L U' R' F' D R'","R D' F R U L' R' U D' B L U' D' F",14,7729.7747
+729,14,"L D U' F B F' U R' U' F' R U F' L'","L F U' R' F U R U' B' U D' L'",12,36.5567
+730,14,"L U' L' D F' R' L B' R' F B' U L U","U' L' U' F' B R B R L' F D' L U L'",14,1762.3508
+731,14,"L' U F' B F' U D' L' U R' F L U' B","B' U L' F' R U' L U' D F2 B' U' L",13,47.7345
+732,14,"B' R F B' R U' R D' B D' F D R' B","B' R D' F' D B' D R' U R' F' B R' B",14,5284.3452
+733,14,"R F' U' D' B R' D' F B' F L D R' F'","F R D' L' F2 B D R B' U D F R'",13,16309.3007
+734,14,"U' L F B R D L U L' F' B L' D' L","L' D L F B' L U' L' D' R' F' B' L' U",14,938.6318
+735,14,"L' D U R' L' F D F L' U' B U R D","D' R' U' B' U L F' D' F' R L U' D' L",14,5063.6843
+736,14,"U' F L' U' D L' B F U' F D U D' F","F' U' F' U F' B' L U D' L F' U",12,45.3805
+737,14,"U F U' L U D B D' R' U B R F' L'","L F R' B' U' R D B' U' D' L' U F' U'",14,722.0902
+738,14,"D L F' R' U R D' B L' R' L R F' R'","R F B' D R' U' R F L' D'",10,1.3219
+739,14,"L' B' L' B D F' R' L R U' B' U' F' U'","U F U B U L' F D' B' L B L",12,9.7002
+740,14,"R' U R L U' F' U D F' D' L' D' L' F'","F L D L D F U' D' F U R' L' U' R",14,729.7047
+741,14,"R L' R' B' D' R' D L B' D B R D' F","F' D R' B' D' B L' D' R D B L",12,24.0155
+742,14,"L R B' U R' D' B' L B' R L' R' L F'","F B L' B D R U' B R' L'",10,1.1708
+743,14,"F D' B F' R L B U' F' U F L' R L","R' F' U' F U B' R' L' F B' D F'",12,25.7508
+744,14,"U F L B F' L R' D F' B' U D' U' L","L' D F B D' R L' F B' L' F' U'",12,5.2477
+745,14,"B' U' L' R U' L B' U' D U' F' L D U","U' D' L' F U2 D' B L' U R' L U B",13,56.2975
+746,14,"D F L' D R' B' R' U L F B' R' U R'","R U' R F' B L' U' R B R D' L F' D'",14,3229.2337
+747,14,"D U R B' D' U' L' D F D L' R U L","L' U' L R' D' F' D' L U D B R' U' D'",14,587.4088
+748,14,"L U' R' B' L F U D' R' D' F' D' U R'","R U' D F D R U' D F' L' B R U L'",14,140.2497
+749,14,"B' F R D' R D L' D L' R B' L' R L","R' B L R' D' L D' R' D R' F' B",12,8.0080
+750,14,"B' U B R' L R B' U D F' L D' L U","U' L' D L' F U' D' B L' B' U' B",12,7.5952
+751,14,"D' B U D' F L U' L' U B' U F' L D","D' L' F U' B U' L U L' F' U' D B' D",14,588.9250
+752,14,"U' R' L' R D R D' L B' F' R' F R' U'","U R F' R F B L' D R' D' L U",12,13.5870
+753,14,"L F U R F L' F' D U D' F' L' U' F'","F U L F U' F L F' R' U' F' L'",12,7.5794
+754,14,"R' F' R U' R D' U L D R B' F' L D","D' L' F B R' D' L' U' D R' U R' F R",14,424.3124
+755,14,"L U B' D F U' R B R U' R L' R L'","L2 R2 U R' B' R' U F' D' B U' L'",12,5.5049
+756,14,"R' U B U' R' D' B L' F' B' F' D' U' B","B' U D F2 B L B' D R U B' U' R",13,43.5749
+757,14,"L B R' F' L' B U' B' R' D B D' U B'","B U' D B' D' R B U B' L F R B' L'",14,26025.5287
+758,14,"B' D' R' F' R' L' F U' D' B U D' B U'","U B' U' D B' U D F' R L F R D B",14,4567.0659
+759,14,"L U L R' B L R' F' B D B' D F' U","U' F D' B D' F B' L R L2 B' R L' U' L'",15,1742.8377
+760,14,"B R U' F R' L R U L F' D B' F' D","D' F B D' F L' U' L' F' U R' B'",12,60.3567
+761,14,"L' B L' R F' U' F D' U L F B U D'","U' D F' B' L' U' D F' U F R' L B' L",14,2963.4345
+762,14,"R U D' F B' F' R' D' L D' U' R B L","L' B' R' U D L' D R B U' D R'",12,16.0636
+763,14,"R U' B D' U' D B' D' B' D' B' D' F L","L' F' D B D B D B U B' U R'",12,17.5347
+764,14,"B' R' L' B' D R L B' D' R' F' B' R U","U' R' F B R D B R' L' D' B R L B",14,206.5944
+765,14,"U F' D F' U' L B' D' U' D U' D U' R","R' U' D' B L' U F D' F U'",10,0.1014
+766,14,"U F' L' R' U' D' U' R D R' D' U' R' F","F' R U D R D' R' U2 D R L F U'",13,59.1995
+767,14,"U F' B' F' L' F' R' B' F B' U' L B' R'","R B L' U F' B2 R F L F2 B U'",12,8833.9347
+768,14,"B' R' B F' L F' L U' D' R' F D' R B'","B R' D F' R U D L' F L' F B' R B",14,904.4072
+769,14,"B' D' U F' D' R' F' D B L R' D U' L","L' F' B L' D' B D L U D' R U L' F",14,2365.0124
+770,14,"D' R' L B F' B' U R B U' R' L F R'","R F' L' R U B' R' U' F R L' D",12,191.0666
+771,14,"D R' U D' L D L' U R L' F B' D' F'","F U L' B R' U' D F' B R' U' D R D'",14,620.6522
+772,14,"U D' R D' R U R D' R F U R' U L","L' U' R U' F' R' D R' U' R' D R' U' D",14,1270.4512
+773,14,"L R' B' F' B F' U L' U' L B' R L U","U' L' R' B L' U L U' F2 R L'",11,4.4614
+774,14,"R U' L' B' L F R' F' L' R' L' D' B' U","U' B D L2 R F R F' L' B L U R'",13,16.5291
+775,14,"L' F U' B' D F' B' R' U R' U' R' F' L","L' F R U R U' R F B D' B U F' L",14,14321.8024
+776,14,"D' U F B U F R' F D B L F' R' D'","D R F L' B' D' F' R F' U' F' B' U' D",14,489.5619
+777,14,"B F L R D R B' D' L' F R B L R","L' R' B' R' F' L D B R' D' R' L' F' B'",14,713.6627
+778,14,"F B' U' B D' F B' R' U' R' U' F L F","F' L' F' U R U R F' B D B' U F' B",14,3800.4612
+779,14,"U D' L' R' B' F' U' D B' R' F' B R B","B' R' F B' R B U D' F B R L U' D",14,1624.2151
+780,14,"R' L F U' R' B L' D F' B R F' L U'","U L' F R' F B' D' L B' R U F' R L'",14,346.9839
+781,14,"D' B F' U' F D' B' D' R' D' F' L' U B'","B U' L F D R D B D F' U F B' D",14,206.5830
+782,14,"D U B' U D' U R' U' F B U' F R L'","L R' F' U F' B' U R U2 D B U' D'",13,221.5849
+783,14,"F' L B R' L F' D' F B F U' D' R D","D' R' U D F2 B' D F R L' B' L' F",13,3144.7369
+784,14,"L R' B L B' F B D' L U' R' B D R'","R D' B' R U L' D F' L' B' R L'",12,29.9403
+785,14,"L' U' R' U' R' D' U' D' L' F U' D R D'","D R' U D' F' L U D2 R U R U L",13,126.1547
+786,14,"L' F R L' U' R B F' L' D B' L' F' L'","L F L B D' L F B' R' U R' L F' L",14,2565.2932
+787,14,"U D' F U' R' D B U' L B L F B U'","U F' B' L' B' L' U B' D' R U F' U' D",14,611.8178
+788,14,"B' U' R L' U B F' B L F B' D R B","B' R' D' F' B L' F B2 U' R' L U B",13,435.6203
+789,14,"D' R F D' B' R' U L B L' U D' U R'","R U2 D L B' L' U' R B D F' R' D",13,122.0138
+790,14,"B L U R' D U' R B U' L' B F L' F'","F L F' B' L U B' R' U D' R U' L' B'",14,803.7892
+791,14,"F' B R U R' F L' R' D R' F' D U' D","U D2 F R D' L R F' R U' R' F B'",13,24.6801
+792,14,"F' L' F D' F' U F D' L' F D' F U' F","F' U F' D F' L D F' U' F D F' L F",14,414.4981
+793,14,"U F' B' L' F' L' D' R' F B' D' L D F'","F D' L' D F' B R D L F L F B U'",14,1151.0312
+794,14,"D' L' U B L' B' U D' B D L U' R' D'","D R U B' L' U2 D L F L U' F' U",13,109.6913
+795,14,"L' F B U L F' L R' F' D' U D R' L'","L R U' F L' R F L' U' F' B' L",12,4.1950
+796,14,"L R F D' B' R' F L' U L' F U' D' B'","B U D F' L U' L F' R B D F' R' L'",14,4468.7533
+797,14,"B' D' R U R B L D' R U' D' F' R L","L' R' F U D R' D L' B' R' U' R' D B",14,14944.9335
+798,14,"U L' D' U' R U F' U' L F U B U' D","U D' B' U' F' L' U F U' R' U D L U'",14,2199.6111
+799,14,"F U' F' R' B' R' F' B D' L' F' L' D L'","L D' L F L D F B' R B R F U F'",14,815.5241
+800,14,"U' D' R' D' U F R D U R' B F' B F","B2 R U' D' R' F' U' D R U D",11,8.2048
