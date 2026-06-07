@@ -1,4 +1,4 @@
-use crate::cube::Cube;
+use crate::cube::{ALL_MOVES, Cube};
 use serde::Deserialize;
 
 #[derive(Deserialize)]
@@ -130,5 +130,186 @@ impl HeuristicModel {
             relu_avx512::<8>(p2);
         }
         (unsafe { dot128_avx512(h2.as_ptr(), self.w3.as_ptr()) }) + self.b3
+    }
+}
+
+const CORNER_PDB_SIZE: usize = 88_179_840;
+
+pub struct CornerPdb {
+    data: Vec<u8>,
+}
+
+impl CornerPdb {
+    pub fn precompute() -> Self {
+        let path = std::path::Path::new("corner_pdb.bin");
+        if path.exists() {
+            eprintln!("[Corner PDB] Loading from corner_pdb.bin...");
+            if let Ok(data) = std::fs::read(path) {
+                if data.len() == CORNER_PDB_SIZE.div_ceil(2) {
+                    return CornerPdb { data };
+                }
+            }
+            eprintln!("[Corner PDB] Failed to load or invalid size, recomputing...");
+        }
+
+        let packed_len = CORNER_PDB_SIZE.div_ceil(2);
+        let mut data = vec![0xFFu8; packed_len];
+
+        let solved = Cube::new();
+        let si = solved.corner_index() as usize;
+
+        Self::set_dist(&mut data, si, 0);
+
+        let mut current_level = Vec::new();
+        let mut next_level = Vec::new();
+        current_level.push((solved.corners, solved.orientations.corners));
+
+        let mut count = 1usize;
+        let mut d = 0u8;
+
+        while !current_level.is_empty() && d < 11 {
+            for &(corners, corner_ori) in &current_level {
+                for &m in &ALL_MOVES {
+                    let mut c = Cube {
+                        edges: 0xBA98_7654_3210,
+                        corners,
+                        orientations: crate::cube::Orientations {
+                            edges: 0,
+                            corners: corner_ori,
+                        },
+                    };
+                    c.apply_move(m);
+                    let idx = c.corner_index() as usize;
+
+                    if Self::get_dist(&data, idx) == 0xF {
+                        Self::set_dist(&mut data, idx, d + 1);
+                        count += 1;
+                        next_level.push((c.corners, c.orientations.corners));
+                    }
+                }
+            }
+            current_level.clear();
+            std::mem::swap(&mut current_level, &mut next_level);
+            d += 1;
+            eprintln!(
+                "[Corner PDB] Depth {d} complete, level size: {}",
+                current_level.len()
+            );
+        }
+
+        eprintln!("[Corner PDB] Filled {count}/{CORNER_PDB_SIZE} entries");
+        let pdb = CornerPdb { data };
+        if let Err(e) = std::fs::write(path, &pdb.data) {
+            eprintln!("[Corner PDB] Failed to save to corner_pdb.bin: {e}");
+        }
+        pdb
+    }
+
+    #[inline]
+    fn get_dist(data: &[u8], idx: usize) -> u8 {
+        let byte = data[idx >> 1];
+        if idx & 1 == 0 { byte & 0xF } else { byte >> 4 }
+    }
+
+    #[inline]
+    fn set_dist(data: &mut [u8], idx: usize, val: u8) {
+        let bi = idx >> 1;
+        if idx & 1 == 0 {
+            data[bi] = (data[bi] & 0xF0) | (val & 0xF);
+        } else {
+            data[bi] = (data[bi] & 0x0F) | ((val & 0xF) << 4);
+        }
+    }
+
+    #[inline]
+    pub fn lookup(&self, cube: &Cube) -> u8 {
+        Self::get_dist(&self.data, cube.corner_index() as usize)
+    }
+}
+
+const EDGE6_PDB_SIZE: usize = 42_577_920;
+
+pub struct Edge6Pdb {
+    data: Vec<u8>,
+}
+
+impl Edge6Pdb {
+    pub fn precompute() -> Self {
+        let path = std::path::Path::new("edge6_pdb.bin");
+        if path.exists() {
+            eprintln!("[Edge6 PDB] Loading from edge6_pdb.bin...");
+            if let Ok(data) = std::fs::read(path) {
+                if data.len() == EDGE6_PDB_SIZE.div_ceil(2) {
+                    return Edge6Pdb { data };
+                }
+            }
+            eprintln!("[Edge6 PDB] Failed to load or invalid size, recomputing...");
+        }
+
+        let packed_len = EDGE6_PDB_SIZE.div_ceil(2);
+        let mut data = vec![0xFFu8; packed_len];
+
+        let solved = Cube::new();
+        let si = solved.edge6_index();
+
+        Self::set_dist(&mut data, si, 0);
+
+        let mut current_level = Vec::new();
+        let mut next_level = Vec::new();
+        current_level.push(solved);
+
+        let mut count = 1usize;
+        let mut d = 0u8;
+
+        while !current_level.is_empty() {
+            for &cube in &current_level {
+                for &m in &ALL_MOVES {
+                    let mut nc = cube;
+                    nc.apply_move(m);
+                    let idx = nc.edge6_index();
+
+                    if Self::get_dist(&data, idx) == 0xF {
+                        Self::set_dist(&mut data, idx, d + 1);
+                        count += 1;
+                        next_level.push(nc);
+                    }
+                }
+            }
+            current_level.clear();
+            std::mem::swap(&mut current_level, &mut next_level);
+            d += 1;
+            eprintln!(
+                "[Edge6 PDB] Depth {d} complete, level size: {}, total filled: {count}",
+                current_level.len()
+            );
+        }
+
+        eprintln!("[Edge6 PDB] Filled {count}/{EDGE6_PDB_SIZE} entries");
+        let pdb = Edge6Pdb { data };
+        if let Err(e) = std::fs::write(path, &pdb.data) {
+            eprintln!("[Edge6 PDB] Failed to save to edge6_pdb.bin: {e}");
+        }
+        pdb
+    }
+
+    #[inline]
+    fn get_dist(data: &[u8], idx: usize) -> u8 {
+        let byte = data[idx >> 1];
+        if idx & 1 == 0 { byte & 0xF } else { byte >> 4 }
+    }
+
+    #[inline]
+    fn set_dist(data: &mut [u8], idx: usize, val: u8) {
+        let bi = idx >> 1;
+        if idx & 1 == 0 {
+            data[bi] = (data[bi] & 0xF0) | (val & 0xF);
+        } else {
+            data[bi] = (data[bi] & 0x0F) | ((val & 0xF) << 4);
+        }
+    }
+
+    #[inline]
+    pub fn lookup(&self, cube: &Cube) -> u8 {
+        Self::get_dist(&self.data, cube.edge6_index())
     }
 }
