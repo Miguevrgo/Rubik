@@ -1,6 +1,5 @@
 mod cube;
-mod search;
 
 fn main() {
-    println!("Hello, world!");
+    println!("Rubik's Cube library initialized.");
 }
