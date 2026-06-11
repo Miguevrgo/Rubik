@@ -3,9 +3,10 @@
 /// an u64 as we need 4 * 12 = 48 bits, then we use next 12 bits for
 /// the orientation
 ///
-/// There are 8 corners, we use 8 bits for each even if we don't need
-/// that much information so that we have 8-bit pretty numbers, numbered
-/// from top to bottom anticlockwise totaling 64 bits
+/// There are 8 corners, numbered from top to bottom anticlockwise.
+/// We use 32 bits for the corner identities (8 corners * 4 bits) inside the
+/// bottom 32 bits of a u64, and the upper 32 bits for the corner orientations
+/// (8 corners * 4 bits), totaling 64 bits.
 pub struct Cube {
     edges: u64,
     corners: u64,
@@ -15,7 +16,7 @@ impl Cube {
     pub fn new() -> Self {
         Self {
             edges: 0x0FFF_BA98_7654_3210,
-            corners: 0x0706_0504_0302_0100,
+            corners: 0x0000_0000_7654_3210,
         }
     }
 
@@ -29,15 +30,15 @@ impl Cube {
         };
         self.edges = (self.edges & !0xFFFF) | (rotated_edges as u64);
 
-        let corners_face = (self.corners & 0xFFFF_FFFF) as u32;
+        let corners_face = (self.corners & 0xFFFF) as u16;
         let rotated_corners = if PRIME {
-            corners_face.rotate_left(8)
+            corners_face.rotate_left(4)
         } else {
-            corners_face.rotate_right(8)
+            corners_face.rotate_right(4)
         };
-        self.corners = (self.corners & !0xFFFF_FFFF) | (rotated_corners as u64);
+        self.corners = (self.corners & !0xFFFF) | (rotated_corners as u64);
 
-        // Orientation
+        // Orientation Edges
         let eo_bits = ((self.edges >> 48) & 0xF) as u8;
         let rotated_eo = if PRIME {
             ((eo_bits << 1) & 0xF) | (eo_bits >> 3)
@@ -46,7 +47,14 @@ impl Cube {
         };
         self.edges = (self.edges & !0x000F_0000_0000_0000) | ((rotated_eo as u64) << 48);
 
-        // TODO: Corners
+        // Orientation Corners
+        let co_face = ((self.corners >> 32) & 0xFFFF) as u16;
+        let rotated_co = if PRIME {
+            co_face.rotate_left(4)
+        } else {
+            co_face.rotate_right(4)
+        };
+        self.corners = (self.corners & !0x0000_FFFF_0000_0000) | ((rotated_co as u64) << 32);
     }
 
     pub fn down<const PRIME: bool>(&mut self) {
@@ -58,15 +66,15 @@ impl Cube {
         };
         self.edges = (self.edges & !0xFFFF_0000_0000) | ((rotated_edges as u64) << 32);
 
-        let corners_face = (self.corners >> 32) as u32;
+        let corners_face = ((self.corners >> 16) & 0xFFFF) as u16;
         let rotated_corners = if PRIME {
-            corners_face.rotate_right(8)
+            corners_face.rotate_right(4)
         } else {
-            corners_face.rotate_left(8)
+            corners_face.rotate_left(4)
         };
-        self.corners = (self.corners & !0xFFFF_FFFF_0000_0000) | ((rotated_corners as u64) << 32);
+        self.corners = (self.corners & !0xFFFF_0000) | ((rotated_corners as u64) << 16);
 
-        // Orientation
+        // Orientation Edges
         let eo_bits = ((self.edges >> 56) & 0xF) as u8;
         let rotated_eo = if PRIME {
             (eo_bits >> 1) | ((eo_bits & 1) << 3)
@@ -74,7 +82,15 @@ impl Cube {
             ((eo_bits << 1) & 0xF) | (eo_bits >> 3)
         };
         self.edges = (self.edges & !0x0F00_0000_0000_0000) | ((rotated_eo as u64) << 56);
-        // TODO: Corners
+
+        // Orientation Corners
+        let co_face = ((self.corners >> 48) & 0xFFFF) as u16;
+        let rotated_co = if PRIME {
+            co_face.rotate_right(4)
+        } else {
+            co_face.rotate_left(4)
+        };
+        self.corners = (self.corners & !0xFFFF_0000_0000_0000) | ((rotated_co as u64) << 48);
     }
 
     pub fn right<const PRIME: bool>(&mut self) {
@@ -92,10 +108,10 @@ impl Cube {
         self.edges =
             (self.edges & !0x0000_000F_00FF_000F) | ne0 | (ne4 << 16) | (ne5 << 20) | (ne8 << 32);
 
-        let c0 = self.corners & 0xFF;
-        let c1 = (self.corners >> 8) & 0xFF;
-        let c4 = (self.corners >> 32) & 0xFF;
-        let c5 = (self.corners >> 40) & 0xFF;
+        let c0 = self.corners & 0xF;
+        let c1 = (self.corners >> 4) & 0xF;
+        let c4 = (self.corners >> 16) & 0xF;
+        let c5 = (self.corners >> 20) & 0xF;
 
         let (nc0, nc1, nc4, nc5) = if PRIME {
             (c1, c5, c0, c4)
@@ -103,10 +119,28 @@ impl Cube {
             (c4, c0, c5, c1)
         };
 
-        self.corners =
-            (self.corners & !0x0000_FFFF_0000_FFFF) | nc0 | (nc1 << 8) | (nc4 << 32) | (nc5 << 40);
+        let co0 = (self.corners >> 32) & 0xF;
+        let co1 = (self.corners >> 36) & 0xF;
+        let co4 = (self.corners >> 48) & 0xF;
+        let co5 = (self.corners >> 52) & 0xF;
 
-        // Orientation
+        let (nco0, nco1, nco4, nco5) = if PRIME {
+            ((co1 + 1) % 3, (co5 + 2) % 3, (co0 + 2) % 3, (co4 + 1) % 3)
+        } else {
+            ((co4 + 1) % 3, (co0 + 2) % 3, (co5 + 2) % 3, (co1 + 1) % 3)
+        };
+
+        self.corners = (self.corners & !0x00FF_00FF_00FF_00FF)
+            | nc0
+            | (nc1 << 4)
+            | (nc4 << 16)
+            | (nc5 << 20)
+            | (nco0 << 32)
+            | (nco1 << 36)
+            | (nco4 << 48)
+            | (nco5 << 52);
+
+        // Orientation Edges
         let eo0 = (self.edges >> 48) & 1;
         let eo4 = (self.edges >> 52) & 1;
         let eo5 = (self.edges >> 53) & 1;
@@ -121,7 +155,6 @@ impl Cube {
             | (ne_eo4 << 52)
             | (ne_eo5 << 53)
             | (ne_eo8 << 56);
-        // TODO: Corners
     }
 
     pub fn left<const PRIME: bool>(&mut self) {
@@ -142,10 +175,10 @@ impl Cube {
             | (ne7 << 28)
             | (ne10 << 40);
 
-        let c2 = (self.corners >> 16) & 0xFF;
-        let c3 = (self.corners >> 24) & 0xFF;
-        let c6 = (self.corners >> 48) & 0xFF;
-        let c7 = (self.corners >> 56) & 0xFF;
+        let c2 = (self.corners >> 8) & 0xF;
+        let c3 = (self.corners >> 12) & 0xF;
+        let c6 = (self.corners >> 24) & 0xF;
+        let c7 = (self.corners >> 28) & 0xF;
 
         let (nc2, nc3, nc6, nc7) = if PRIME {
             (c3, c7, c2, c6)
@@ -153,13 +186,28 @@ impl Cube {
             (c6, c2, c7, c3)
         };
 
-        self.corners = (self.corners & !0xFFFF_0000_FFFF_0000)
-            | (nc2 << 16)
-            | (nc3 << 24)
-            | (nc6 << 48)
-            | (nc7 << 56);
+        let co2 = (self.corners >> 40) & 0xF;
+        let co3 = (self.corners >> 44) & 0xF;
+        let co6 = (self.corners >> 56) & 0xF;
+        let co7 = (self.corners >> 60) & 0xF;
 
-        // Orientation
+        let (nco2, nco3, nco6, nco7) = if PRIME {
+            ((co3 + 1) % 3, (co7 + 2) % 3, (co2 + 2) % 3, (co6 + 1) % 3)
+        } else {
+            ((co6 + 1) % 3, (co2 + 2) % 3, (co7 + 2) % 3, (co3 + 1) % 3)
+        };
+
+        self.corners = (self.corners & !0xFF00_FF00_FF00_FF00)
+            | (nc2 << 8)
+            | (nc3 << 12)
+            | (nc6 << 24)
+            | (nc7 << 28)
+            | (nco2 << 40)
+            | (nco3 << 44)
+            | (nco6 << 56)
+            | (nco7 << 60);
+
+        // Orientation Edges
         let eo2 = (self.edges >> 50) & 1;
         let eo6 = (self.edges >> 54) & 1;
         let eo7 = (self.edges >> 55) & 1;
@@ -174,7 +222,6 @@ impl Cube {
             | (ne_eo6 << 54)
             | (ne_eo7 << 55)
             | (ne_eo10 << 58);
-        // TODO: Corners
     }
 
     pub fn front<const PRIME: bool>(&mut self) {
@@ -195,10 +242,10 @@ impl Cube {
             | (ne6 << 24)
             | (ne11 << 44);
 
-        let c0 = self.corners & 0xFF;
-        let c3 = (self.corners >> 24) & 0xFF;
-        let c4 = (self.corners >> 32) & 0xFF;
-        let c7 = (self.corners >> 56) & 0xFF;
+        let c0 = self.corners & 0xF;
+        let c3 = (self.corners >> 12) & 0xF;
+        let c4 = (self.corners >> 16) & 0xF;
+        let c7 = (self.corners >> 28) & 0xF;
 
         let (nc0, nc3, nc4, nc7) = if PRIME {
             (c4, c0, c7, c3)
@@ -206,10 +253,28 @@ impl Cube {
             (c3, c7, c0, c4)
         };
 
-        self.corners =
-            (self.corners & !0xFF00_00FF_FF00_00FF) | nc0 | (nc3 << 24) | (nc4 << 32) | (nc7 << 56);
+        let co0 = (self.corners >> 32) & 0xF;
+        let co3 = (self.corners >> 44) & 0xF;
+        let co4 = (self.corners >> 48) & 0xF;
+        let co7 = (self.corners >> 60) & 0xF;
 
-        // Orientation (with flip)
+        let (nco0, nco3, nco4, nco7) = if PRIME {
+            ((co4 + 2) % 3, (co0 + 1) % 3, (co7 + 1) % 3, (co3 + 2) % 3)
+        } else {
+            ((co3 + 2) % 3, (co7 + 1) % 3, (co0 + 1) % 3, (co4 + 2) % 3)
+        };
+
+        self.corners = (self.corners & !0xF00F_F00F_F00F_F00F)
+            | nc0
+            | (nc3 << 12)
+            | (nc4 << 16)
+            | (nc7 << 28)
+            | (nco0 << 32)
+            | (nco3 << 44)
+            | (nco4 << 48)
+            | (nco7 << 60);
+
+        // Orientation Edges (with flip)
         let eo3 = (self.edges >> 51) & 1;
         let eo4 = (self.edges >> 52) & 1;
         let eo6 = (self.edges >> 54) & 1;
@@ -224,7 +289,6 @@ impl Cube {
             | (ne_eo4 << 52)
             | (ne_eo6 << 54)
             | (ne_eo11 << 59);
-        // TODO: Corners
     }
 
     pub fn back<const PRIME: bool>(&mut self) {
@@ -245,10 +309,10 @@ impl Cube {
             | (ne7 << 28)
             | (ne9 << 36);
 
-        let c1 = (self.corners >> 8) & 0xFF;
-        let c2 = (self.corners >> 16) & 0xFF;
-        let c5 = (self.corners >> 40) & 0xFF;
-        let c6 = (self.corners >> 48) & 0xFF;
+        let c1 = (self.corners >> 4) & 0xF;
+        let c2 = (self.corners >> 8) & 0xF;
+        let c5 = (self.corners >> 20) & 0xF;
+        let c6 = (self.corners >> 24) & 0xF;
 
         let (nc1, nc2, nc5, nc6) = if PRIME {
             (c2, c6, c1, c5)
@@ -256,13 +320,28 @@ impl Cube {
             (c5, c1, c6, c2)
         };
 
-        self.corners = (self.corners & !0x00FF_FF00_00FF_FF00)
-            | (nc1 << 8)
-            | (nc2 << 16)
-            | (nc5 << 40)
-            | (nc6 << 48);
+        let co1 = (self.corners >> 36) & 0xF;
+        let co2 = (self.corners >> 40) & 0xF;
+        let co5 = (self.corners >> 52) & 0xF;
+        let co6 = (self.corners >> 56) & 0xF;
 
-        // Orientation (with flip)
+        let (nco1, nco2, nco5, nco6) = if PRIME {
+            ((co2 + 1) % 3, (co6 + 2) % 3, (co1 + 2) % 3, (co5 + 1) % 3)
+        } else {
+            ((co5 + 1) % 3, (co1 + 2) % 3, (co6 + 2) % 3, (co2 + 1) % 3)
+        };
+
+        self.corners = (self.corners & !0x0FF0_0FF0_0FF0_0FF0)
+            | (nc1 << 4)
+            | (nc2 << 8)
+            | (nc5 << 20)
+            | (nc6 << 24)
+            | (nco1 << 36)
+            | (nco2 << 40)
+            | (nco5 << 52)
+            | (nco6 << 56);
+
+        // Orientation Edges (with flip)
         let eo1 = (self.edges >> 49) & 1;
         let eo5 = (self.edges >> 53) & 1;
         let eo7 = (self.edges >> 55) & 1;
@@ -277,11 +356,10 @@ impl Cube {
             | (ne_eo5 << 53)
             | (ne_eo7 << 55)
             | (ne_eo9 << 57);
-        // TODO: Corners
     }
 
     pub fn is_solved(&self) -> bool {
-        self.edges == 0x0FFF_BA98_7654_3210 && self.corners == 0x0706_0504_0302_0100
+        self.edges == 0x0FFF_BA98_7654_3210 && self.corners == 0x0000_0000_7654_3210
     }
 }
 
