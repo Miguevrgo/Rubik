@@ -363,6 +363,29 @@ impl Cube {
     }
 }
 
+impl std::fmt::Debug for Cube {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        const RED: &str = "\x1b[1;31;49m";
+        const GREEN: &str = "\x1b[1;32;49m";
+        const ORANGE: &str = "\x1b[1;38;5;202;49m";
+        const YELLOW: &str = "\x1b[1;33;49m";
+        const BLUE: &str = "\x1b[1;34;49m";
+        const RESET: &str = "\x1b[1;39;49m";
+
+        writeln!(f, "{RESET}{}[U U U]", " ".repeat(7))?;
+        writeln!(f, "{}[U U U]", " ".repeat(7))?;
+        writeln!(f, "{}[U U U]", " ".repeat(7))?;
+
+        writeln!(f, "{ORANGE}[L L L]{GREEN}[F F F]{RED}[R R R]{BLUE}[B B B]")?;
+        writeln!(f, "{ORANGE}[L L L]{GREEN}[F F F]{RED}[R R R]{BLUE}[B B B]")?;
+        writeln!(f, "{ORANGE}[L L L]{GREEN}[F F F]{RED}[R R R]{BLUE}[B B B]")?;
+
+        writeln!(f, "{YELLOW}{}[D D D]", " ".repeat(7))?;
+        writeln!(f, "{}[D D D]", " ".repeat(7))?;
+        writeln!(f, "{}[D D D]{RESET}", " ".repeat(7))
+    }
+}
+
 #[cfg(test)]
 mod tests {
     use super::*;

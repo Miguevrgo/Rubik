@@ -1,6 +1,9 @@
+use crate::cube::Cube;
+
 mod cube;
 mod search;
 
 fn main() {
-    println!("Hello, world!");
+    let cube = Cube::new();
+    println!("{cube:?}");
 }
