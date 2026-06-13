@@ -361,6 +361,134 @@ impl Cube {
     pub fn is_solved(&self) -> bool {
         self.edges == 0x0FFF_BA98_7654_3210 && self.corners == 0x0000_0000_7654_3210
     }
+
+    fn get_corner_color(&self, pos: usize, facelet_type: usize) -> char {
+        const CORNER_COLORS: [[char; 3]; 8] = [
+            ['W', 'R', 'G'],
+            ['W', 'B', 'R'],
+            ['W', 'O', 'B'],
+            ['W', 'G', 'O'],
+            ['Y', 'G', 'R'],
+            ['Y', 'R', 'B'],
+            ['Y', 'B', 'O'],
+            ['Y', 'O', 'G'],
+        ];
+        let id = ((self.corners >> (pos * 4)) & 0xF) as usize;
+        let co = ((self.corners >> (32 + pos * 4)) & 0xF) as usize;
+        let colors = CORNER_COLORS[id];
+        match co {
+            0 => colors[facelet_type],
+            1 => {
+                colors[if facelet_type == 2 {
+                    0
+                } else {
+                    facelet_type + 1
+                }]
+            }
+            _ => {
+                colors[if facelet_type == 0 {
+                    2
+                } else {
+                    facelet_type - 1
+                }]
+            }
+        }
+    }
+
+    fn get_edge_color(&self, pos: usize, is_secondary: bool) -> char {
+        const EDGE_COLORS: [[char; 2]; 12] = [
+            ['W', 'R'],
+            ['W', 'B'],
+            ['W', 'O'],
+            ['W', 'G'],
+            ['G', 'R'],
+            ['B', 'R'],
+            ['G', 'O'],
+            ['B', 'O'],
+            ['Y', 'R'],
+            ['Y', 'B'],
+            ['Y', 'O'],
+            ['Y', 'G'],
+        ];
+        let id = ((self.edges >> (pos * 4)) & 0xF) as usize;
+        let eo = ((self.edges >> (48 + pos)) & 1) as usize;
+        EDGE_COLORS[id][(eo == 0) as usize ^ is_secondary as usize]
+    }
+
+    fn get_color(&self, face: char, r: usize, c: usize) -> char {
+        match (face, r, c) {
+            (_, 1, 1) => match face {
+                'U' => 'W',
+                'D' => 'Y',
+                'L' => 'O',
+                'F' => 'G',
+                'R' => 'R',
+                'B' => 'B',
+                _ => ' ',
+            },
+            ('U', 0, 0) => self.get_corner_color(2, 0),
+            ('U', 0, 2) => self.get_corner_color(1, 0),
+            ('U', 2, 0) => self.get_corner_color(3, 0),
+            ('U', 2, 2) => self.get_corner_color(0, 0),
+
+            ('D', 0, 0) => self.get_corner_color(7, 0),
+            ('D', 0, 2) => self.get_corner_color(4, 0),
+            ('D', 2, 0) => self.get_corner_color(6, 0),
+            ('D', 2, 2) => self.get_corner_color(5, 0),
+
+            ('L', 0, 0) => self.get_corner_color(2, 1),
+            ('L', 0, 2) => self.get_corner_color(3, 2),
+            ('L', 2, 0) => self.get_corner_color(6, 2),
+            ('L', 2, 2) => self.get_corner_color(7, 1),
+
+            ('F', 0, 0) => self.get_corner_color(3, 1),
+            ('F', 0, 2) => self.get_corner_color(0, 2),
+            ('F', 2, 0) => self.get_corner_color(7, 2),
+            ('F', 2, 2) => self.get_corner_color(4, 1),
+
+            ('R', 0, 0) => self.get_corner_color(0, 1),
+            ('R', 0, 2) => self.get_corner_color(1, 2),
+            ('R', 2, 0) => self.get_corner_color(4, 2),
+            ('R', 2, 2) => self.get_corner_color(5, 1),
+
+            ('B', 0, 0) => self.get_corner_color(1, 1),
+            ('B', 0, 2) => self.get_corner_color(2, 2),
+            ('B', 2, 0) => self.get_corner_color(5, 2),
+            ('B', 2, 2) => self.get_corner_color(6, 1),
+
+            ('U', 0, 1) => self.get_edge_color(1, false),
+            ('U', 1, 0) => self.get_edge_color(2, false),
+            ('U', 1, 2) => self.get_edge_color(0, false),
+            ('U', 2, 1) => self.get_edge_color(3, false),
+
+            ('D', 0, 1) => self.get_edge_color(11, false),
+            ('D', 1, 0) => self.get_edge_color(10, false),
+            ('D', 1, 2) => self.get_edge_color(8, false),
+            ('D', 2, 1) => self.get_edge_color(9, false),
+
+            ('L', 0, 1) => self.get_edge_color(2, true),
+            ('L', 1, 0) => self.get_edge_color(7, true),
+            ('L', 1, 2) => self.get_edge_color(6, true),
+            ('L', 2, 1) => self.get_edge_color(10, true),
+
+            ('F', 0, 1) => self.get_edge_color(3, true),
+            ('F', 1, 0) => self.get_edge_color(6, false),
+            ('F', 1, 2) => self.get_edge_color(4, false),
+            ('F', 2, 1) => self.get_edge_color(11, true),
+
+            ('R', 0, 1) => self.get_edge_color(0, true),
+            ('R', 1, 0) => self.get_edge_color(4, true),
+            ('R', 1, 2) => self.get_edge_color(5, true),
+            ('R', 2, 1) => self.get_edge_color(8, true),
+
+            ('B', 0, 1) => self.get_edge_color(1, true),
+            ('B', 1, 0) => self.get_edge_color(5, false),
+            ('B', 1, 2) => self.get_edge_color(7, false),
+            ('B', 2, 1) => self.get_edge_color(9, true),
+
+            _ => ' ',
+        }
+    }
 }
 
 impl std::fmt::Debug for Cube {
@@ -372,17 +500,48 @@ impl std::fmt::Debug for Cube {
         const BLUE: &str = "\x1b[1;34;49m";
         const RESET: &str = "\x1b[1;39;49m";
 
-        writeln!(f, "{RESET}{}[U U U]", " ".repeat(7))?;
-        writeln!(f, "{}[U U U]", " ".repeat(7))?;
-        writeln!(f, "{}[U U U]", " ".repeat(7))?;
+        let color = |face: char, r: usize, c: usize| -> String {
+            let val = self.get_color(face, r, c);
+            let color_code = match val {
+                'R' => RED,
+                'G' => GREEN,
+                'O' => ORANGE,
+                'Y' => YELLOW,
+                'B' => BLUE,
+                _ => RESET,
+            };
+            format!("{}{}{}", color_code, val, RESET)
+        };
 
-        writeln!(f, "{ORANGE}[L L L]{GREEN}[F F F]{RED}[R R R]{BLUE}[B B B]")?;
-        writeln!(f, "{ORANGE}[L L L]{GREEN}[F F F]{RED}[R R R]{BLUE}[B B B]")?;
-        writeln!(f, "{ORANGE}[L L L]{GREEN}[F F F]{RED}[R R R]{BLUE}[B B B]")?;
+        let get_row = |face: char, r: usize| -> String {
+            format!(
+                "[{} {} {}]",
+                color(face, r, 0),
+                color(face, r, 1),
+                color(face, r, 2)
+            )
+        };
 
-        writeln!(f, "{YELLOW}{}[D D D]", " ".repeat(7))?;
-        writeln!(f, "{}[D D D]", " ".repeat(7))?;
-        writeln!(f, "{}[D D D]{RESET}", " ".repeat(7))
+        for r in 0..3 {
+            writeln!(f, "{}{}", " ".repeat(7), get_row('U', r))?;
+        }
+
+        for r in 0..3 {
+            writeln!(
+                f,
+                "{}{}{}{}",
+                get_row('L', r),
+                get_row('F', r),
+                get_row('R', r),
+                get_row('B', r)
+            )?;
+        }
+
+        for r in 0..3 {
+            writeln!(f, "{}{}", " ".repeat(7), get_row('D', r))?;
+        }
+
+        Ok(())
     }
 }
 

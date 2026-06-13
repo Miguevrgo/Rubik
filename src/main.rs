@@ -4,6 +4,12 @@ mod cube;
 mod search;
 
 fn main() {
-    let cube = Cube::new();
+    let mut cube = Cube::new();
+    println!("Solved Cube:");
+    println!("{cube:?}");
+
+    println!("\nAfter R and U':");
+    cube.right::<false>();
+    cube.up::<true>();
     println!("{cube:?}");
 }
