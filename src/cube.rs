@@ -1,3 +1,5 @@
+use rand::RngExt;
+
 /// There are 12 edges, numbered anticlockwise starting from 6 always
 /// This numeration fits into 4 bits which are also clustered inside
 /// an u64 as we need 4 * 12 = 48 bits, then we use next 12 bits for
@@ -360,6 +362,74 @@ impl Cube {
 
     pub fn is_solved(&self) -> bool {
         self.edges == 0x0FFF_BA98_7654_3210 && self.corners == 0x0000_0000_7654_3210
+    }
+
+    pub fn shuffle(&mut self, n: usize) -> String {
+        let mut rng = rand::rng();
+        let mut moves = String::with_capacity(n * 2);
+
+        for _ in 0..n {
+            let prime = rng.random_bool(0.5);
+            match rng.random_range(..6_usize) {
+                0 => {
+                    if prime {
+                        self.up::<true>();
+                        moves.push_str("U'");
+                    } else {
+                        self.up::<false>();
+                        moves.push('U');
+                    };
+                }
+                1 => {
+                    if prime {
+                        self.down::<true>();
+                        moves.push_str("D'");
+                    } else {
+                        self.down::<false>();
+                        moves.push('D');
+                    };
+                }
+                2 => {
+                    if prime {
+                        self.right::<true>();
+                        moves.push_str("R'");
+                    } else {
+                        self.right::<false>();
+                        moves.push('R');
+                    };
+                }
+                3 => {
+                    if prime {
+                        self.left::<true>();
+                        moves.push_str("L'");
+                    } else {
+                        self.left::<false>();
+                        moves.push('L');
+                    };
+                }
+                4 => {
+                    if prime {
+                        self.front::<true>();
+                        moves.push_str("F'");
+                    } else {
+                        self.front::<false>();
+                        moves.push('F');
+                    };
+                }
+                5 => {
+                    if prime {
+                        self.back::<true>();
+                        moves.push_str("B'");
+                    } else {
+                        self.back::<false>();
+                        moves.push('B');
+                    };
+                }
+                _ => unreachable!(),
+            }
+        }
+
+        moves
     }
 
     fn get_corner_color(&self, pos: usize, facelet_type: usize) -> char {
