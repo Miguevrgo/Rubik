@@ -559,6 +559,23 @@ impl Cube {
             _ => ' ',
         }
     }
+
+    pub fn apply_move(&mut self, mv: Move) {
+        match mv {
+            Move::U => self.up::<false>(),
+            Move::UPrime => self.up::<true>(),
+            Move::D => self.down::<false>(),
+            Move::DPrime => self.down::<true>(),
+            Move::R => self.right::<false>(),
+            Move::RPrime => self.right::<true>(),
+            Move::L => self.left::<false>(),
+            Move::LPrime => self.left::<true>(),
+            Move::F => self.front::<false>(),
+            Move::FPrime => self.front::<true>(),
+            Move::B => self.back::<false>(),
+            Move::BPrime => self.back::<true>(),
+        }
+    }
 }
 
 impl std::fmt::Debug for Cube {
@@ -613,6 +630,21 @@ impl std::fmt::Debug for Cube {
 
         Ok(())
     }
+}
+
+pub enum Move {
+    U,
+    UPrime,
+    D,
+    DPrime,
+    R,
+    RPrime,
+    L,
+    LPrime,
+    F,
+    FPrime,
+    B,
+    BPrime,
 }
 
 #[cfg(test)]
