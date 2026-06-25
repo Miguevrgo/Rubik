@@ -364,71 +364,14 @@ impl Cube {
         self.edges == 0x0FFF_BA98_7654_3210 && self.corners == 0x0000_0000_7654_3210
     }
 
-    pub fn shuffle(&mut self, n: usize) -> String {
+    pub fn shuffle(&mut self, n: usize) -> Vec<Move> {
         let mut rng = rand::rng();
-        let mut moves = String::with_capacity(n * 2);
-
+        let mut moves = Vec::with_capacity(n);
         for _ in 0..n {
-            let prime = rng.random_bool(0.5);
-            match rng.random_range(..6_usize) {
-                0 => {
-                    if prime {
-                        self.up::<true>();
-                        moves.push_str("U'");
-                    } else {
-                        self.up::<false>();
-                        moves.push('U');
-                    };
-                }
-                1 => {
-                    if prime {
-                        self.down::<true>();
-                        moves.push_str("D'");
-                    } else {
-                        self.down::<false>();
-                        moves.push('D');
-                    };
-                }
-                2 => {
-                    if prime {
-                        self.right::<true>();
-                        moves.push_str("R'");
-                    } else {
-                        self.right::<false>();
-                        moves.push('R');
-                    };
-                }
-                3 => {
-                    if prime {
-                        self.left::<true>();
-                        moves.push_str("L'");
-                    } else {
-                        self.left::<false>();
-                        moves.push('L');
-                    };
-                }
-                4 => {
-                    if prime {
-                        self.front::<true>();
-                        moves.push_str("F'");
-                    } else {
-                        self.front::<false>();
-                        moves.push('F');
-                    };
-                }
-                5 => {
-                    if prime {
-                        self.back::<true>();
-                        moves.push_str("B'");
-                    } else {
-                        self.back::<false>();
-                        moves.push('B');
-                    };
-                }
-                _ => unreachable!(),
-            }
+            let mv = Move::ALL[rng.random_range(0..12)];
+            self.apply_move(mv);
+            moves.push(mv);
         }
-
         moves
     }
 
@@ -632,6 +575,7 @@ impl std::fmt::Debug for Cube {
     }
 }
 
+#[derive(Debug, Clone, Copy, PartialEq, Eq)]
 pub enum Move {
     U,
     UPrime,
@@ -645,6 +589,23 @@ pub enum Move {
     FPrime,
     B,
     BPrime,
+}
+
+impl Move {
+    pub const ALL: [Move; 12] = [
+        Move::U,
+        Move::UPrime,
+        Move::D,
+        Move::DPrime,
+        Move::R,
+        Move::RPrime,
+        Move::L,
+        Move::LPrime,
+        Move::F,
+        Move::FPrime,
+        Move::B,
+        Move::BPrime,
+    ];
 }
 
 #[cfg(test)]
