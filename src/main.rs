@@ -2,6 +2,7 @@ use crate::cube::Cube;
 
 mod cube;
 mod search;
+mod tables;
 
 fn main() {
     let mut cube = Cube::new();

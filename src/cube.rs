@@ -517,6 +517,7 @@ impl Cube {
             Move::FPrime => self.front::<true>(),
             Move::B => self.back::<false>(),
             Move::BPrime => self.back::<true>(),
+            Move::NULL => {}
         }
     }
 }
@@ -589,6 +590,7 @@ pub enum Move {
     FPrime,
     B,
     BPrime,
+    NULL,
 }
 
 impl Move {
