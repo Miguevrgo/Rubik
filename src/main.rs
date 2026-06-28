@@ -1,4 +1,4 @@
-use crate::cube::Cube;
+use crate::{cube::Cube, search::ida, tables::SearchData};
 
 mod cube;
 mod search;
@@ -6,11 +6,14 @@ mod tables;
 
 fn main() {
     let mut cube = Cube::new();
-    println!("Solved Cube:");
-    println!("{cube:?}");
-
-    println!("\nAfter R and U':");
-    cube.right::<false>();
-    cube.up::<true>();
-    println!("{cube:?}");
+    let moves = cube.shuffle(2);
+    println!("{moves:?}");
+    let mut data = SearchData::new();
+    data.time_ts = 3000;
+    while !cube.is_solved() {
+        println!("{cube}");
+        ida(&cube, &mut data);
+        println!("{:?}", data.best_move);
+        cube.apply_move(data.best_move);
+    }
 }

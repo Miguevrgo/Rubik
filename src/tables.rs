@@ -45,6 +45,21 @@ impl SearchData {
         self.nodes = 0;
         self.timing = Instant::now();
     }
+
+    pub fn push(&mut self, hash: u64) {
+        self.ply += 1;
+        self.stack.push(hash);
+    }
+
+    pub fn pop(&mut self) {
+        self.ply -= 1;
+        self.stack.pop();
+    }
+
+    pub fn continue_search(&self) -> bool {
+        let time = self.timing.elapsed().as_millis();
+        time < self.time_ts
+    }
 }
 
 impl fmt::Display for SearchData {
@@ -53,12 +68,10 @@ impl fmt::Display for SearchData {
         let nps = (1000 * self.nodes as u128).checked_div(time).unwrap_or(0) as u64;
 
         if self.eval.abs() >= SOLVED - i32::from(MAX_DEPTH) {
-            let solved_in = self.ply;
-            let sign = if self.eval < 0 { "-" } else { "" };
             write!(
                 f,
-                "[+] Depth {} Solved {sign}{solved_in} Time {time} Nodes {} NPS {nps}",
-                self.depth, self.nodes,
+                "[+] Depth {} Solved {} Time {time} Nodes {} NPS {nps}",
+                self.depth, self.ply, self.nodes,
             )
         } else {
             write!(

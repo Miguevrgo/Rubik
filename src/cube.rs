@@ -1,5 +1,7 @@
 use rand::RngExt;
 
+use crate::search::SOLVED;
+
 /// There are 12 edges, numbered anticlockwise starting from 6 always
 /// This numeration fits into 4 bits which are also clustered inside
 /// an u64 as we need 4 * 12 = 48 bits, then we use next 12 bits for
@@ -9,6 +11,7 @@ use rand::RngExt;
 /// We use 32 bits for the corner identities (8 corners * 4 bits) inside the
 /// bottom 32 bits of a u64, and the upper 32 bits for the corner orientations
 /// (8 corners * 4 bits), totaling 64 bits.
+#[derive(Copy, Clone)]
 pub struct Cube {
     edges: u64,
     corners: u64,
@@ -520,9 +523,23 @@ impl Cube {
             Move::NULL => {}
         }
     }
+
+    pub fn evaluate(&self) -> i32 {
+        // TODO: Should be doing something like how many corners and faces are oriented
+        if self.is_solved() { SOLVED } else { 0 }
+    }
+
+    pub fn hash(&self) -> u64 {
+        // TODO: Proper hashing
+        let mut hash = 0;
+        hash ^= self.edges;
+        hash ^= self.corners;
+
+        hash
+    }
 }
 
-impl std::fmt::Debug for Cube {
+impl std::fmt::Display for Cube {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         const RED: &str = "\x1b[1;31;49m";
         const GREEN: &str = "\x1b[1;32;49m";
@@ -577,6 +594,7 @@ impl std::fmt::Debug for Cube {
 }
 
 #[derive(Debug, Clone, Copy, PartialEq, Eq)]
+#[allow(clippy::upper_case_acronyms)]
 pub enum Move {
     U,
     UPrime,

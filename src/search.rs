@@ -7,11 +7,11 @@ pub const INF: i32 = 2 << 16;
 pub const SOLVED: i32 = INF << 2;
 pub const MAX_DEPTH: u8 = 32;
 
-fn find_best_move(cube: &mut Cube, data: &mut SearchData) {
+pub fn ida(cube: &Cube, data: &mut SearchData) {
     data.start_search();
 
     while !data.stop {
-        data.eval = ida(cube, -INF, INF, data);
+        data.eval = negamax(cube, data.depth, -INF, INF, data);
 
         if data.stop {
             break;
@@ -26,6 +26,45 @@ fn find_best_move(cube: &mut Cube, data: &mut SearchData) {
     }
 }
 
-fn ida(cube: &mut Cube, alpha: i32, beta: i32, data: &mut SearchData) -> i32 {
-    0
+fn negamax(cube: &Cube, depth: u8, mut alpha: i32, beta: i32, data: &mut SearchData) -> i32 {
+    if data.stop || (data.nodes & 4095 == 0 && !data.continue_search()) {
+        data.stop = true;
+        return 0;
+    }
+
+    let mut best_move = Move::NULL;
+    let mut best_score = -INF;
+
+    if depth == 0 {
+        return cube.evaluate(); // TODO:
+    }
+
+    data.push(cube.hash());
+
+    for mv in Move::ALL {
+        let mut new_cube = *cube;
+        new_cube.apply_move(mv);
+
+        data.nodes += 1;
+
+        let score = negamax(&new_cube, depth - 1, -beta, -alpha, data);
+
+        if score > best_score {
+            alpha = alpha.max(score);
+            best_score = score;
+            best_move = mv;
+        }
+
+        if alpha >= beta {
+            break;
+        }
+    }
+
+    data.pop();
+
+    if data.ply == 0 {
+        data.best_move = best_move;
+    }
+
+    best_score
 }
