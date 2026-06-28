@@ -1,7 +1,5 @@
 use rand::RngExt;
 
-use crate::search::SOLVED;
-
 /// There are 12 edges, numbered anticlockwise starting from 6 always
 /// This numeration fits into 4 bits which are also clustered inside
 /// an u64 as we need 4 * 12 = 48 bits, then we use next 12 bits for
@@ -524,9 +522,9 @@ impl Cube {
         }
     }
 
+    // TODO:Use NNUE
     pub fn evaluate(&self) -> i32 {
-        // TODO: Should be doing something like how many corners and faces are oriented
-        if self.is_solved() { SOLVED } else { 0 }
+        unimplemented!()
     }
 
     pub fn hash(&self) -> u64 {
@@ -593,26 +591,30 @@ impl std::fmt::Display for Cube {
     }
 }
 
-#[derive(Debug, Clone, Copy, PartialEq, Eq)]
+/// This way we have all the moves in "pairs" where
+/// all the bits except the first one denote the type
+/// while the last bit is 0 for normal or 1 for prime
+#[repr(u8)]
 #[allow(clippy::upper_case_acronyms)]
+#[derive(Debug, Clone, Copy, PartialEq, Eq)]
 pub enum Move {
-    U,
-    UPrime,
-    D,
-    DPrime,
-    R,
-    RPrime,
-    L,
-    LPrime,
-    F,
-    FPrime,
-    B,
-    BPrime,
-    NULL,
+    U = 0,
+    UPrime = 1,
+    D = 2,
+    DPrime = 3,
+    R = 4,
+    RPrime = 5,
+    L = 6,
+    LPrime = 7,
+    F = 8,
+    FPrime = 9,
+    B = 10,
+    BPrime = 11,
+    NULL = 12,
 }
 
 impl Move {
-    pub const ALL: [Move; 12] = [
+    pub const ALL: [Self; 12] = [
         Move::U,
         Move::UPrime,
         Move::D,
@@ -626,6 +628,12 @@ impl Move {
         Move::B,
         Move::BPrime,
     ];
+
+    pub fn gen_moves(last_move: Move) -> impl Iterator<Item = Move> {
+        Move::ALL
+            .into_iter()
+            .filter(move |&mv| mv as u8 != last_move as u8 ^ 1)
+    }
 }
 
 #[cfg(test)]
