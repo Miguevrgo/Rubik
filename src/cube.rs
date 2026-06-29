@@ -1,5 +1,8 @@
 use rand::RngExt;
 
+const ADD1: [u64; 16] = [1, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
+const ADD2: [u64; 16] = [2, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
+
 /// There are 12 edges, numbered anticlockwise starting from 6 always
 /// This numeration fits into 4 bits which are also clustered inside
 /// an u64 as we need 4 * 12 = 48 bits, then we use next 12 bits for
@@ -128,9 +131,19 @@ impl Cube {
         let co5 = (self.corners >> 52) & 0xF;
 
         let (nco0, nco1, nco4, nco5) = if PRIME {
-            ((co1 + 1) % 3, (co5 + 2) % 3, (co0 + 2) % 3, (co4 + 1) % 3)
+            (
+                ADD1[co1 as usize],
+                ADD2[co5 as usize],
+                ADD2[co0 as usize],
+                ADD1[co4 as usize],
+            )
         } else {
-            ((co4 + 1) % 3, (co0 + 2) % 3, (co5 + 2) % 3, (co1 + 1) % 3)
+            (
+                ADD1[co4 as usize],
+                ADD2[co0 as usize],
+                ADD2[co5 as usize],
+                ADD1[co1 as usize],
+            )
         };
 
         self.corners = (self.corners & !0x00FF_00FF_00FF_00FF)
@@ -195,9 +208,19 @@ impl Cube {
         let co7 = (self.corners >> 60) & 0xF;
 
         let (nco2, nco3, nco6, nco7) = if PRIME {
-            ((co3 + 1) % 3, (co7 + 2) % 3, (co2 + 2) % 3, (co6 + 1) % 3)
+            (
+                ADD1[co3 as usize],
+                ADD2[co7 as usize],
+                ADD2[co2 as usize],
+                ADD1[co6 as usize],
+            )
         } else {
-            ((co6 + 1) % 3, (co2 + 2) % 3, (co7 + 2) % 3, (co3 + 1) % 3)
+            (
+                ADD1[co6 as usize],
+                ADD2[co2 as usize],
+                ADD2[co7 as usize],
+                ADD1[co3 as usize],
+            )
         };
 
         self.corners = (self.corners & !0xFF00_FF00_FF00_FF00)
@@ -262,9 +285,19 @@ impl Cube {
         let co7 = (self.corners >> 60) & 0xF;
 
         let (nco0, nco3, nco4, nco7) = if PRIME {
-            ((co4 + 2) % 3, (co0 + 1) % 3, (co7 + 1) % 3, (co3 + 2) % 3)
+            (
+                ADD2[co4 as usize],
+                ADD1[co0 as usize],
+                ADD1[co7 as usize],
+                ADD2[co3 as usize],
+            )
         } else {
-            ((co3 + 2) % 3, (co7 + 1) % 3, (co0 + 1) % 3, (co4 + 2) % 3)
+            (
+                ADD2[co3 as usize],
+                ADD1[co7 as usize],
+                ADD1[co0 as usize],
+                ADD2[co4 as usize],
+            )
         };
 
         self.corners = (self.corners & !0xF00F_F00F_F00F_F00F)
@@ -329,9 +362,19 @@ impl Cube {
         let co6 = (self.corners >> 56) & 0xF;
 
         let (nco1, nco2, nco5, nco6) = if PRIME {
-            ((co2 + 1) % 3, (co6 + 2) % 3, (co1 + 2) % 3, (co5 + 1) % 3)
+            (
+                ADD1[co2 as usize],
+                ADD2[co6 as usize],
+                ADD2[co1 as usize],
+                ADD1[co5 as usize],
+            )
         } else {
-            ((co5 + 1) % 3, (co1 + 2) % 3, (co6 + 2) % 3, (co2 + 1) % 3)
+            (
+                ADD1[co5 as usize],
+                ADD2[co1 as usize],
+                ADD2[co6 as usize],
+                ADD1[co2 as usize],
+            )
         };
 
         self.corners = (self.corners & !0x0FF0_0FF0_0FF0_0FF0)
@@ -523,6 +566,7 @@ impl Cube {
     }
 
     // TODO:Use NNUE
+    #[allow(dead_code)]
     pub fn evaluate(&self) -> i32 {
         unimplemented!()
     }
