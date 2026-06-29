@@ -15,7 +15,7 @@ pub struct SearchData {
     pub solution: Vec<Move>,
     pub solved: bool,
 
-    pub stack: Vec<u64>,
+    pub tt: TranspositionTable,
 }
 
 impl SearchData {
@@ -30,7 +30,7 @@ impl SearchData {
             nodes: 0,
             solved: false,
             solution: Vec::new(),
-            stack: Vec::with_capacity(16),
+            tt: TranspositionTable::with_size_mb(32),
         }
     }
 
@@ -42,21 +42,69 @@ impl SearchData {
         self.solution.clear();
         self.nodes = 0;
         self.timing = Instant::now();
+        self.tt.clear();
     }
 
-    pub fn push(&mut self, hash: u64) {
+    pub fn push(&mut self) {
         self.ply += 1;
-        self.stack.push(hash);
     }
 
     pub fn pop(&mut self) {
         self.ply -= 1;
-        self.stack.pop();
     }
 
     pub fn continue_search(&self) -> bool {
         let time = self.timing.elapsed().as_millis();
         time < self.time_ts
+    }
+}
+
+#[derive(Copy, Clone, Default)]
+#[repr(C)]
+pub struct TTEntry {
+    pub key: u64,
+    pub depth: u8,
+}
+
+pub struct TranspositionTable {
+    pub tt: Vec<TTEntry>,
+}
+
+impl TranspositionTable {
+    pub fn with_size_mb(mb: usize) -> Self {
+        let bytes = mb * 1_048_576;
+        let entry_sz = std::mem::size_of::<TTEntry>();
+        let len = (bytes / entry_sz).next_power_of_two();
+        Self {
+            tt: vec![TTEntry::default(); len],
+        }
+    }
+
+    fn idx(&self, hash: u64) -> usize {
+        // (Read Lemire Blog for explanation | Carp)
+        ((hash as u128 * self.tt.len() as u128) >> 64) as usize
+    }
+
+    pub fn probe(&self, hash: u64) -> Option<u8> {
+        let e = &self.tt[self.idx(hash)];
+        (e.key == hash).then_some(e.depth)
+    }
+
+    pub fn insert(&mut self, hash: u64, depth: u8) {
+        let idx = self.idx(hash);
+        let slot = &mut self.tt[idx];
+
+        if slot.key != hash || depth >= slot.depth {
+            slot.key = hash;
+            slot.depth = depth;
+        }
+    }
+
+    pub fn clear(&mut self) {
+        for entry in self.tt.iter_mut() {
+            entry.key = 0;
+            entry.depth = 0;
+        }
     }
 }
 

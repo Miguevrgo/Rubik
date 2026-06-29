@@ -30,11 +30,18 @@ fn dfs(cube: &Cube, depth: u8, data: &mut SearchData, last_move: Move) -> bool {
         return false;
     }
 
+    let key = cube.hash();
+    if let Some(saved_depth) = data.tt.probe(key)
+        && saved_depth >= depth
+    {
+        return false;
+    }
+
     if depth == 0 {
         return cube.is_solved(); // TODO: evaluate
     }
 
-    data.push(cube.hash());
+    data.push();
 
     for mv in Move::gen_moves(last_move) {
         let mut new_cube = *cube;
@@ -50,6 +57,7 @@ fn dfs(cube: &Cube, depth: u8, data: &mut SearchData, last_move: Move) -> bool {
     }
 
     data.pop();
+    data.tt.insert(key, depth);
 
     false
 }
