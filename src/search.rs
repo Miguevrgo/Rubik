@@ -39,6 +39,12 @@ fn dfs(cube: &Cube, depth: u8, data: &mut SearchData, last_move: Move) -> bool {
 
     if depth == 0 {
         return cube.is_solved(); // TODO: evaluate
+    } else if depth <= data.lt.max_depth {
+        match data.lt.probe(key) {
+            Some(dist) if dist > depth => return false,
+            None => return false,
+            _ => {}
+        }
     }
 
     data.push();

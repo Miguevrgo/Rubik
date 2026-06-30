@@ -1,6 +1,6 @@
-use std::{fmt, time::Instant};
+use std::{collections::VecDeque, fmt, time::Instant};
 
-use crate::cube::Move;
+use crate::cube::{Cube, Move};
 
 pub struct SearchData {
     // Search Control
@@ -16,6 +16,7 @@ pub struct SearchData {
     pub solved: bool,
 
     pub tt: TranspositionTable,
+    pub lt: LookupTable,
 }
 
 impl SearchData {
@@ -31,6 +32,7 @@ impl SearchData {
             solved: false,
             solution: Vec::new(),
             tt: TranspositionTable::with_size_mb(32),
+            lt: LookupTable::new(5),
         }
     }
 
@@ -104,6 +106,89 @@ impl TranspositionTable {
         for entry in self.tt.iter_mut() {
             entry.key = 0;
             entry.depth = 0;
+        }
+    }
+}
+
+#[derive(Default, Clone, Copy)]
+pub struct LookupEntry {
+    pub key: u64,
+    pub dist: u8,
+}
+
+pub struct LookupTable {
+    table: Vec<LookupEntry>,
+    mask: usize,
+    pub max_depth: u8,
+}
+
+impl LookupTable {
+    pub fn new(max_depth: u8) -> Self {
+        let max_nodes = 12 * (11usize.pow(max_depth as u32)) / 10;
+        let len = (max_nodes * 2).next_power_of_two();
+
+        let mut lt = Self {
+            table: vec![LookupEntry::default(); len],
+            mask: len - 1,
+            max_depth,
+        };
+        lt.generate();
+        lt
+    }
+
+    fn idx(&self, hash: u64) -> usize {
+        ((hash as u128 * self.table.len() as u128) >> 64) as usize
+    }
+
+    pub fn probe(&self, hash: u64) -> Option<u8> {
+        let mut idx = self.idx(hash);
+        loop {
+            let e = &self.table[idx];
+            if e.key == 0 {
+                return None;
+            }
+            if e.key == hash {
+                return Some(e.dist);
+            }
+            idx = (idx + 1) & self.mask;
+        }
+    }
+
+    fn insert(&mut self, hash: u64, dist: u8) {
+        let mut idx = self.idx(hash);
+        loop {
+            let e = &mut self.table[idx];
+            if e.key == 0 {
+                e.key = hash;
+                e.dist = dist;
+                return;
+            }
+            if e.key == hash {
+                return;
+            }
+            idx = (idx + 1) & self.mask;
+        }
+    }
+
+    fn generate(&mut self) {
+        let mut queue = VecDeque::new();
+        let solved = Cube::new();
+        self.insert(solved.hash(), 0);
+        queue.push_back((solved, 0u8));
+
+        while let Some((cube, dist)) = queue.pop_front() {
+            if dist >= self.max_depth {
+                continue;
+            }
+            for mv in Move::ALL {
+                let mut c = cube;
+                c.apply_move(mv);
+                let h = c.hash();
+                if self.probe(h).is_none() {
+                    self.insert(h, dist + 1);
+                    queue.push_back((c, dist + 1));
+                }
+            }
         }
     }
 }

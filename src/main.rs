@@ -6,7 +6,7 @@ mod tables;
 
 fn main() {
     let mut cube = Cube::new();
-    let moves = cube.shuffle(9);
+    let moves = cube.shuffle(13);
     println!("{moves:?}");
     let mut data = SearchData::new();
     data.time_ts = 8000;
