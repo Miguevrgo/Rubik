@@ -27,7 +27,7 @@ impl Cube {
     }
 
     /// Eeach possible move (clockwise or anticlockwise)
-    pub fn up<const PRIME: bool>(&mut self) {
+    fn up<const PRIME: bool>(&mut self) {
         let edges_face = (self.edges & 0xFFFF) as u16;
         let rotated_edges = if PRIME {
             edges_face.rotate_left(4)
@@ -63,7 +63,7 @@ impl Cube {
         self.corners = (self.corners & !0x0000_FFFF_0000_0000) | ((rotated_co as u64) << 32);
     }
 
-    pub fn down<const PRIME: bool>(&mut self) {
+    fn down<const PRIME: bool>(&mut self) {
         let edges_face = (self.edges >> 32) as u16;
         let rotated_edges = if PRIME {
             edges_face.rotate_right(4)
@@ -99,7 +99,7 @@ impl Cube {
         self.corners = (self.corners & !0xFFFF_0000_0000_0000) | ((rotated_co as u64) << 48);
     }
 
-    pub fn right<const PRIME: bool>(&mut self) {
+    fn right<const PRIME: bool>(&mut self) {
         let e0 = self.edges & 0xF;
         let e4 = (self.edges >> 16) & 0xF;
         let e5 = (self.edges >> 20) & 0xF;
@@ -173,7 +173,7 @@ impl Cube {
             | (ne_eo8 << 56);
     }
 
-    pub fn left<const PRIME: bool>(&mut self) {
+    fn left<const PRIME: bool>(&mut self) {
         let e2 = (self.edges >> 8) & 0xF;
         let e6 = (self.edges >> 24) & 0xF;
         let e7 = (self.edges >> 28) & 0xF;
@@ -250,7 +250,7 @@ impl Cube {
             | (ne_eo10 << 58);
     }
 
-    pub fn front<const PRIME: bool>(&mut self) {
+    fn front<const PRIME: bool>(&mut self) {
         let e3 = (self.edges >> 12) & 0xF;
         let e4 = (self.edges >> 16) & 0xF;
         let e6 = (self.edges >> 24) & 0xF;
@@ -327,7 +327,7 @@ impl Cube {
             | (ne_eo11 << 59);
     }
 
-    pub fn back<const PRIME: bool>(&mut self) {
+    fn back<const PRIME: bool>(&mut self) {
         let e1 = (self.edges >> 4) & 0xF;
         let e5 = (self.edges >> 20) & 0xF;
         let e7 = (self.edges >> 28) & 0xF;
@@ -571,13 +571,15 @@ impl Cube {
         unimplemented!()
     }
 
+    /// We use xorshift64star for the hashing
+    /// https://en.wikipedia.org/wiki/Xorshift
     pub fn hash(&self) -> u64 {
-        // TODO: Proper hashing
-        let mut hash = 0;
-        hash ^= self.edges;
-        hash ^= self.corners;
+        let mut x = self.edges ^ self.corners;
+        x ^= x >> 12;
+        x ^= x << 25;
+        x ^= x >> 27;
 
-        hash
+        x.wrapping_mul(0x2545_F491_4F6C_DD1D)
     }
 }
 
